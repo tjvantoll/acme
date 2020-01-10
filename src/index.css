@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.k-form > div {
+  margin: 2em;
+}
+.k-form input {
+  padding: 0.5em;
+}

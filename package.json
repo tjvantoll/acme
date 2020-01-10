@@ -3,11 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-drawing": "^1.6.0",
+    "@progress/kendo-react-dateinputs": "^3.9.0",
+    "@progress/kendo-react-form": "^3.9.0",
+    "@progress/kendo-react-inputs": "^3.9.0",
+    "@progress/kendo-react-intl": "^3.9.0",
+    "@progress/kendo-theme-default": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0"
   },
   "scripts": {
