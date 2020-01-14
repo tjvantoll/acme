@@ -28,6 +28,13 @@ h1 .k-avatar {
 .k-avatar-initials {
   font-size: 18px;
 }
+.k-button {
+  align-self: center;
+}
+.k-icon.k-i-menu {
+  font-size: 30px;
+}
+
 
 form.k-form fieldset {
   border-width: 1px;
