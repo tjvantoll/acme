@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import DrawerRouterContainer from "./components/DrawerRouterContainer";
 import Forms from "./components/Forms";
 import Home from "./components/Home";
+import Products from "./components/Products";
 import Team from "./components/Team";
 
 export default function App() {
@@ -16,6 +17,9 @@ export default function App() {
           </Route>
           <Route path="/forms">
             <Forms />
+          </Route>
+          <Route path="/products">
+            <Products />
           </Route>
           <Route exact path="/">
             <Home />

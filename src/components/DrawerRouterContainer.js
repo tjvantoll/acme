@@ -14,6 +14,7 @@ const user = {
 const items = [
   { text: "Home", icon: "k-i-globe-outline", selected: true, route: "/" },
   { text: "Sign Up", icon: 'k-i-plus-outline', selected: false, route: '/forms' },
+  { text: "Products", icon: 'k-i-cart', selected: false, route: '/products' },
   { text: "Our Team", icon: 'k-i-user', selected: false, route: '/team' },
 ];
 

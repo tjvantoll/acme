@@ -9,7 +9,7 @@ const people = [];
 for (let i = 0; i < 100; i++) {
   people.push({
     name: chance.name(),
-    address: chance.address(),
+    title: chance.profession(),
     email: chance.email(),
   });
 }
@@ -23,7 +23,7 @@ export default function Home() {
             { person.name }
           </CardHeader>
           <CardBody>
-            <p>🏠 { person.address }</p>
+            <p>👤 { person.title }</p>
             <p>✉️ { person.email }</p>
           </CardBody>
           <CardActions layout="end">
