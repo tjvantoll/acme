@@ -35,8 +35,27 @@ h1 .k-avatar {
   font-size: 30px;
 }
 
+.k-drawer-item .k-item-text {
+  align-self: center;
+}
+.k-drawer-item span.k-icon {
+  font-size: 30px;
+}
 
 form.k-form fieldset {
   border-width: 1px;
   padding: 0 16px 16px 16px;
+}
+
+.k-card {
+  width: 250px;
+  margin: 0.5em;
+}
+div.k-card-list, div.k-card-deck {
+  margin: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.k-card-deck div.k-card + div.k-card {
+  margin-left: 0.5em;
 }

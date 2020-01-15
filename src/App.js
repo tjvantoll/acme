@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import "./App.css";
-
 import DrawerRouterContainer from "./components/DrawerRouterContainer";
 import Forms from "./components/Forms";
+import Home from "./components/Home";
 import Team from "./components/Team";
 
 export default function App() {
@@ -17,6 +16,9 @@ export default function App() {
           </Route>
           <Route path="/forms">
             <Forms />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </DrawerRouterContainer>
