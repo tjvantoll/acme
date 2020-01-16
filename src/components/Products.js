@@ -34,7 +34,7 @@ export default function Products() {
   }
 
   return (
-    <div className="page-container">
+    <React.Fragment>
       <Filter
         value={filter}
         onChange={onFilterChange}
@@ -51,6 +51,6 @@ export default function Products() {
         <GridColumn field="price" title="Price" format="{0:c2}" />
         <GridColumn field="lastOrder" title="Last Order" format="{0:d}" />
       </Grid>
-    </div>
+    </React.Fragment>
   );
 }

@@ -13,8 +13,9 @@ const user = {
 
 const items = [
   { text: "Home", icon: "k-i-globe-outline", selected: true, route: "/" },
-  { text: "Sign Up", icon: 'k-i-plus-outline', selected: false, route: '/forms' },
+  { text: "Calendar", icon: "k-i-calendar", selected: true, route: "/calendar" },
   { text: "Products", icon: 'k-i-cart', selected: false, route: '/products' },
+  { text: "Sign Up", icon: 'k-i-plus-outline', selected: false, route: '/forms' },
   { text: "Our Team", icon: 'k-i-user', selected: false, route: '/team' },
 ];
 
