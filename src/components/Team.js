@@ -22,8 +22,10 @@ export default function Team() {
     { field: 'name', title: 'Name', width: 150, expandable: true, locked: true },
     { field: 'position', title: 'Position', width: 150 },
     { field: 'hireDate', title: 'Hire Date', width: 100, format: '{0:d}' },
-    { field: 'phone', title: 'Phone', width: 100 },
-    { field: 'extension', title: 'Extension', width: 100 },
+    { title: 'Contact Information', width: 200, children: [
+      { field: 'phone', title: 'Phone', width: 100 },
+      { field: 'extension', title: 'Extension', width: 100 },
+    ]},
     { field: 'fullTime', title: 'Full Time', width: 100 },
     { field: 'timeInPosition', title: 'Tenure', width: 50 }
   ]);
