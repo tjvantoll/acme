@@ -16,22 +16,16 @@ for (let i = 0; i < 100; i++) {
 
 export default function Home() {
   return (
-    <div className="k-card-deck">
+    <ul>
       {people.map((person, index) => (
-        <Card key={index}>
-          <CardHeader>
-            { person.name }
-          </CardHeader>
-          <CardBody>
-            <p>👤 { person.title }</p>
-            <p>✉️ { person.email }</p>
-          </CardBody>
-          <CardActions layout="end">
-            <span className="k-button k-flat k-primary">Message</span>
-            <span className="k-button k-flat k-primary">Email</span>
-          </CardActions>
-        </Card>
+        <ul>
+          <li>{person.name}</li>
+          <ul>
+            <li>{person.title}</li>
+            <li>{person.email}</li>
+          </ul>
+        </ul>
       ))}
-    </div>
+    </ul>
   );
 }

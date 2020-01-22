@@ -19,13 +19,11 @@ export default function Team() {
   });
   const [expanded, setExpanded] = React.useState([1, 2, 32]);
   const [columns, setColumns] = React.useState([
-    { field: 'name', title: 'Name', width: 150, expandable: true, locked: true },
+    { field: 'name', title: 'Name', width: 200, expandable: true },
     { field: 'position', title: 'Position', width: 150 },
     { field: 'hireDate', title: 'Hire Date', width: 100, format: '{0:d}' },
-    { title: 'Contact Information', width: 200, children: [
-      { field: 'phone', title: 'Phone', width: 100 },
-      { field: 'extension', title: 'Extension', width: 100 },
-    ]},
+    { field: 'phone', title: 'Phone', width: 100 },
+    { field: 'extension', title: 'Extension', width: 100 },
     { field: 'fullTime', title: 'Full Time', width: 100 },
     { field: 'timeInPosition', title: 'Tenure', width: 50 }
   ]);
@@ -70,10 +68,10 @@ export default function Team() {
 
   return (
     <TreeList
-      style={{ maxHeight: '510px',overflow: 'auto' }}
+      style={{ widthoverflow: 'auto' }}
       tableProps={{
         ref: (table) => tableRef = table,
-        style: { width: "auto" }
+        style: { width: "1200px" }
       }}
       expandField={expandField}
       subItemsField={subItemsField}
@@ -83,10 +81,6 @@ export default function Team() {
       data={processData()}
       onDataStateChange={handleDataStateChange}
       columns={columns}
-      resizable={true}
-      onColumnResize={onColumnResize}
-      reorderable={true}
-      onColumnReorder={onColumnReorder}
     />
   );
 }

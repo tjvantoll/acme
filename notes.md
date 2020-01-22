@@ -1,33 +1,28 @@
-- New component: Form
-
 - New component: Drawer
-    - https://www.telerik.com/kendo-react-ui-develop/components/layout/drawer/
+  - https://www.telerik.com/kendo-react-ui/components/layout/drawer/
+
+- New component: Avatar
 
 - New component: Card
-    - https://www.telerik.com/kendo-react-ui-develop/components/layout/card/
+  - https://www.telerik.com/kendo-react-ui/components/layout/card/
+
+
+- New component: Form
+  - https://www.telerik.com/kendo-react-ui/components/form/
 
 - New component: Checkbox
 
-- New component: Avatar
-    - https://www.telerik.com/kendo-react-ui-develop/components/layout/avatar/
-
 - New component: Filter
-    - https://www.telerik.com/kendo-react-ui-develop/components/datatools/filter/
 
 - Scheduler enhancements
-    - Keyboard navigation
-    - Custom rendering
-    - Accessibility compliance
+  - Accessibility compliance
+  - Keyboard navigation
+  - Custom rendering
 
 - TreeList enhancements
-    - Column virtualization
-        - https://www.telerik.com/kendo-react-ui/components/treelist/columns/virtualization/
-    - Frozen columns
-        - https://www.telerik.com/kendo-react-ui/components/treelist/columns/locked/
-    - Resize columns
-        - https://www.telerik.com/kendo-react-ui/components/treelist/columns/resizing/
-    - Reorder columns
-        - https://www.telerik.com/kendo-react-ui/components/treelist/columns/reordering/
-    - Multi-column headers
-        - https://www.telerik.com/kendo-react-ui/components/treelist/columns/headers/
-
+  - Frozen columns
+  - Resize columns
+  - Reorder columns
+  - Multi-column headers
+  - Column virtualization
+    - https://www.telerik.com/kendo-react-ui/components/treelist/columns/virtualization/

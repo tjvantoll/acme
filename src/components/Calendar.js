@@ -21,10 +21,11 @@ for (let i = 0; i < 5; i++) {
   const endHour = ("0" + endHourInt).slice(-2);
 
   data.push({
-    id: 0,
+    id: i,
     title: chance.company(),
     start: new Date(`${year}-${month}-${day}T${startHour}:00:00.000Z`),
     end: new Date(`${year}-${month}-${day}T${endHour}:00:00.000Z`),
+    isAllDay: chance.coin() === "heads"
   });
 }
 
@@ -32,7 +33,9 @@ const CustomItem = (props) => (
   <SchedulerItem
     {...props}
     style={{ ...props.style }}
-  />
+  >
+    {props.name}
+  </SchedulerItem>
 );
 
 

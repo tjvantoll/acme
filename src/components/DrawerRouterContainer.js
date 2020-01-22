@@ -12,11 +12,11 @@ const user = {
 };
 
 const items = [
-  { text: "Home", icon: "k-i-globe-outline", selected: true, route: "/" },
-  { text: "Calendar", icon: "k-i-calendar", selected: true, route: "/calendar" },
-  { text: "Products", icon: 'k-i-cart', selected: false, route: '/products' },
-  { text: "Sign Up", icon: 'k-i-plus-outline', selected: false, route: '/forms' },
-  { text: "Our Team", icon: 'k-i-user', selected: false, route: '/team' },
+  { text: "Home", icon: "k-i-globe-outline", route: "/" },
+  { text: "Calendar", icon: "k-i-calendar", route: "/calendar" },
+  { text: "Products", icon: 'k-i-cart', route: '/products' },
+  { text: "Sign Up", icon: 'k-i-plus-outline', route: '/forms' },
+  { text: "Our Team", icon: 'k-i-user', route: '/team' },
 ];
 
 class DrawerRouterContainer extends React.Component {
@@ -64,12 +64,7 @@ class DrawerRouterContainer extends React.Component {
               <h1>
                 <Button icon="menu" look="flat" onClick={this.handleClick} />
                 <span className="title">ACME Industries</span>
-                {/*<Avatar shape="rounded" type="image">
-                  <img alt={user.name} src={user.img} />
-                </Avatar>*/}
-                <Avatar shape="rounded" type="initials">
-                  <span>{user.initials}</span>
-                </Avatar>
+                <span></span>
               </h1>
             </div>
             {this.props.children}
