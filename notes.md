@@ -6,7 +6,6 @@
 - New component: Card
   - https://www.telerik.com/kendo-react-ui/components/layout/card/
 
-
 - New component: Form
   - https://www.telerik.com/kendo-react-ui/components/form/
 
@@ -18,6 +17,7 @@
   - Accessibility compliance
   - Keyboard navigation
   - Custom rendering
+    - https://www.telerik.com/kendo-react-ui/components/scheduler/items/overview/
 
 - TreeList enhancements
   - Frozen columns
