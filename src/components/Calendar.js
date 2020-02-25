@@ -32,7 +32,7 @@ for (let i = 0; i < 5; i++) {
 const CustomItem = (props) => (
   <SchedulerItem
     {...props}
-    style={{ ...props.style }}
+    style={{ ...props.style, backgroundColor: props.isAllDay ? "blue" : "red" }}
   >
     {props.name}
   </SchedulerItem>

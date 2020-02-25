@@ -19,7 +19,7 @@ export default function Team() {
   });
   const [expanded, setExpanded] = React.useState([1, 2, 32]);
   const [columns, setColumns] = React.useState([
-    { field: 'name', title: 'Name', width: 200, expandable: true },
+    { field: 'name', title: 'Name', width: 200, expandable: true, locked: true },
     { field: 'position', title: 'Position', width: 150 },
     { field: 'hireDate', title: 'Hire Date', width: 100, format: '{0:d}' },
     { field: 'phone', title: 'Phone', width: 100 },
@@ -71,7 +71,7 @@ export default function Team() {
       style={{ widthoverflow: 'auto' }}
       tableProps={{
         ref: (table) => tableRef = table,
-        style: { width: "1200px" }
+        style: { width: "auto" }
       }}
       expandField={expandField}
       subItemsField={subItemsField}
@@ -81,6 +81,10 @@ export default function Team() {
       data={processData()}
       onDataStateChange={handleDataStateChange}
       columns={columns}
+      resizable={true}
+      onColumnResize={onColumnResize}
+      reorderable={true}
+      onColumnReorder={onColumnReorder}
     />
   );
 }

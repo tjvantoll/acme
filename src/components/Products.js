@@ -25,7 +25,7 @@ export default function Products() {
   const [filter, setFilter] = React.useState({
     logic: 'and',
     filters: [
-      
+      { field: 'price', operator: 'gt', value: 4000 }
     ]
   })
 

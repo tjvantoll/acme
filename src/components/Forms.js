@@ -6,6 +6,19 @@ import countries from "../data/countries";
 
 const requiredValidator = (value) => value ? "" : "This field is required.";
 
+const CustomInput = (fieldRenderProps) => {
+  const { validationMessage, touched, ...others } = fieldRenderProps;
+  return (
+    <div>
+      <Input {...others} style={{ width: "100%" }} />
+      {
+        touched && validationMessage &&
+        (<div className={"k-required"}>{validationMessage}</div>)
+      }
+    </div>
+  );
+};
+
 export default function Forms() {
   const handleSubmit = (data) => {
     alert(JSON.stringify(data));
@@ -21,7 +34,7 @@ export default function Forms() {
             <span>Username</span>
             <Field
               name="username"
-              component={Input}
+              component={CustomInput}
               validator={requiredValidator}
             />
           </label>
@@ -47,6 +60,15 @@ export default function Forms() {
               validator={requiredValidator}
             />
           </label>
+
+          <div className="k-form-field">
+            <Field
+              name="terms"
+              component={Checkbox}
+              label="I accept the terms of service."
+              validator={requiredValidator}
+            />
+          </div>
 
           <div>
             <button

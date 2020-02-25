@@ -64,7 +64,10 @@ class DrawerRouterContainer extends React.Component {
               <h1>
                 <Button icon="menu" look="flat" onClick={this.handleClick} />
                 <span className="title">ACME Industries</span>
-                <span></span>
+                <Avatar shape="rounded" type="image">
+                  <img alt={user.name} src={user.img} />
+                </Avatar>
+                
               </h1>
             </div>
             {this.props.children}
