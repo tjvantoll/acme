@@ -3,7 +3,8 @@ import {
   Scheduler,
   DayView,
   MonthView,
-  SchedulerItem
+  SchedulerItem,
+  SchedulerItemProps
 } from '@progress/kendo-react-scheduler';
 import Chance from "chance";
 
@@ -12,7 +13,7 @@ const today = new Date();
 const year = today.getFullYear();
 const month = ("0" + (today.getMonth() + 1)).slice(-2);
 const day = ("0" + today.getDate()).slice(-2);
-const data = [];
+const data: Array<any> = [];
 
 for (let i = 0; i < 5; i++) {
   const startHourInt = chance.integer({ min: 8, max: 16});
@@ -29,12 +30,13 @@ for (let i = 0; i < 5; i++) {
   });
 }
 
-const CustomItem = (props) => (
+// {props.name} ???
+const CustomItem = (props: SchedulerItemProps) => (
   <SchedulerItem
     {...props}
     style={{ ...props.style, backgroundColor: props.isAllDay ? "blue" : "red" }}
   >
-    {props.name}
+    
   </SchedulerItem>
 );
 

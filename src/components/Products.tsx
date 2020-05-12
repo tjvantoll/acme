@@ -7,12 +7,12 @@ import {
   DateFilter,
   BooleanFilter,
 } from "@progress/kendo-react-data-tools";
-import { filterBy } from "@progress/kendo-data-query";
+import { filterBy, CompositeFilterDescriptor } from "@progress/kendo-data-query";
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
 import Chance from "chance";
 
 const chance = new Chance();
-const acmeProducts = [];
+const acmeProducts: Array<any> = [];
 for (var i = 0; i < 50; i++) {
   acmeProducts.push({
     name: chance.capitalize(`${chance.first()} ${chance.animal()}`),
@@ -22,14 +22,14 @@ for (var i = 0; i < 50; i++) {
 }
 
 export default function Products() {
-  const [filter, setFilter] = React.useState({
-    logic: 'and',
+  const [filter, setFilter] = React.useState<CompositeFilterDescriptor>({
+    logic: "and",
     filters: [
-      { field: 'price', operator: 'gt', value: 4000 }
+      { field: "price", operator: "gt", value: 4000 }
     ]
   })
 
-  const onFilterChange = (event) => {
+  const onFilterChange = (event: any) => {
     setFilter(event.filter);
   }
 
@@ -39,8 +39,8 @@ export default function Products() {
         value={filter}
         onChange={onFilterChange}
         fields={[
-          { name: "name", label: 'Name', filter: TextFilter, operators: Operators.text },
-          { name: "price", label: 'Price', filter: NumericFilter, operators: Operators.numeric },
+          { name: "name", label: "Name", filter: TextFilter, operators: Operators.text },
+          { name: "price", label: "Price", filter: NumericFilter, operators: Operators.numeric },
           { name: "lastOrder", label: "Last Order", filter: DateFilter, operators: Operators.date }
         ]}
       />

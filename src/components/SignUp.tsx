@@ -4,9 +4,9 @@ import { Checkbox, Input } from "@progress/kendo-react-inputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
 import countries from "../data/countries";
 
-const requiredValidator = (value) => value ? "" : "This field is required.";
+const requiredValidator = (value: any) => value ? "" : "This field is required.";
 
-const CustomInput = (fieldRenderProps) => {
+const CustomInput = (fieldRenderProps: any) => {
   const { validationMessage, touched, ...others } = fieldRenderProps;
   return (
     <div>
@@ -19,8 +19,8 @@ const CustomInput = (fieldRenderProps) => {
   );
 };
 
-export default function Forms() {
-  const handleSubmit = (data) => {
+export default function SignUp() {
+  const handleSubmit = (data: any) => {
     alert(JSON.stringify(data));
   }
 

@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardBody, CardActions, CardImage, CardSubt
 
 const chance = new Chance();
 
-const people = [];
+const people: Array<any> = [];
 for (let i = 0; i < 100; i++) {
   people.push({
     name: chance.name(),
