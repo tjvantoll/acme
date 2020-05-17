@@ -1,30 +1,43 @@
 # KendoReact ACME Sample
 
-- New component: Drawer
-  - https://www.telerik.com/kendo-react-ui/components/layout/drawer/
+- New component: ListView ✅
+  - https://www.telerik.com/kendo-react-ui/components/listview/
 
-- New component: Avatar
+- New component: Progress Bar & Chunk Progress Bar ❌
 
-- New component: Card
-  - https://www.telerik.com/kendo-react-ui/components/layout/card/
+- New Component: Range Slider ❌
+  - https://www.telerik.com/kendo-react-ui/components/inputs/rangeslider/
 
-- New component: Form
-  - https://www.telerik.com/kendo-react-ui/components/form/
+- New component: Stepper ❌
+  - https://www.telerik.com/kendo-react-ui/components/layout/stepper/
 
-- New component: Checkbox
+- New Components: Label, Floating Label, Hint, and Error ❌
+  - https://www.telerik.com/kendo-react-ui/components/labels/floating-label/
 
-- New component: Filter
+- New Components: Radio Button and Radio Group ❌
+  - https://www.telerik.com/kendo-react-ui/components/inputs/radiogroup/
 
-- Scheduler enhancements
-  - Accessibility compliance
-  - Keyboard navigation
-  - Custom rendering
-    - https://www.telerik.com/kendo-react-ui/components/scheduler/items/overview/
+- New Component: Forms - FormElement & FieldWrapper
+- Form - Form-level Validation, FieldArray
+- Forms Guidelines ❌
+  - https://www.telerik.com/kendo-react-ui/components/form/guidelines-with-examples/
 
-- TreeList enhancements
-  - Frozen columns
-  - Resize columns
-  - Reorder columns
-  - Multi-column headers
-  - Column virtualization
-    - https://www.telerik.com/kendo-react-ui/components/treelist/columns/virtualization/
+
+---
+
+- TreeList
+  - Row Virtualization
+  - Pager
+  - Drag & Drop
+  - Aggregates
+  - Column Menu
+  - Export to PDF & Excel
+
+- Grid
+  - Checkbox Filter
+
+- Scheduler
+  - Header & Footer Custom Rendering
+
+- Drawer
+  - Custom Rendering

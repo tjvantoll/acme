@@ -74,15 +74,19 @@ h1 span {
   padding: 0.5em 0;
 }
 
-.k-card {
-  width: 250px;
-  margin: 0.5em;
+.k-listview-header {
+  padding: 0.5rem 1.5rem;
 }
-div.k-card-list, div.k-card-deck {
-  margin: 1em;
+.k-listview-content {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
-.k-card-deck div.k-card + div.k-card {
-  margin-left: 0.5em;
+
+.k-card {
+  width: 225px;
+  margin: 20px;
+}
+.k-card-actions {
+  flex-wrap: nowrap;
 }
