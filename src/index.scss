@@ -74,6 +74,8 @@ h1 span {
   padding: 0.5em 0;
 }
 
+/* HOME */
+
 .k-listview-header {
   padding: 0.5rem 1.5rem;
 }
@@ -89,4 +91,32 @@ h1 span {
 }
 .k-card-actions {
   flex-wrap: nowrap;
+}
+
+/* SIGN UP */
+
+.k-progressbar-horizontal {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.k-form .k-primary {
+  margin-top: 1rem;
+}
+.k-form > div {
+  margin-bottom: 1rem;
+}
+
+.k-radio-list {
+  margin-top: 1rem;
+}
+
+.k-slider-track-wrap .k-label {
+  display: inherit;
+}
+
+/* CALENDAR */
+
+.k-scheduler-footer .k-dropdown {
+  margin-left: 5px;
 }

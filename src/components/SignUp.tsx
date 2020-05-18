@@ -1,8 +1,20 @@
 import React from "react";
-import { Form, Field } from "@progress/kendo-react-form";
-import { Checkbox, Input } from "@progress/kendo-react-inputs";
-import { DropDownList } from "@progress/kendo-react-dropdowns";
+import { Button } from "@progress/kendo-react-buttons";
+import { Field, FieldWrapper, Form, FormElement } from "@progress/kendo-react-form";
+import { Input, RadioGroup, RangeSlider, SliderLabel } from "@progress/kendo-react-inputs";
+import { Error, Label, Hint } from "@progress/kendo-react-labels";
+import { Stepper } from "@progress/kendo-react-layout";
+import { ProgressBar, ChunkProgressBar } from "@progress/kendo-react-progressbars";
+
 import countries from "../data/countries";
+
+const stepperItems = [
+  { label: "Cart", icon: "k-i-cart" },
+  { label: "Delivery Address", icon: "k-i-marker-pin-target" },
+  { label: "Payment Method", icon: "k-i-dollar" },
+  { label: "Account", icon: "k-i-user", optional: true },
+  { label: "Finish Order", icon: "k-i-track-changes-accept" }
+];
 
 const requiredValidator = (value: any) => value ? "" : "This field is required.";
 
@@ -13,72 +25,85 @@ const CustomInput = (fieldRenderProps: any) => {
       <Input {...others} style={{ width: "100%" }} />
       {
         touched && validationMessage &&
-        (<div className={"k-required"}>{validationMessage}</div>)
+        <Error>{validationMessage}</Error>
       }
     </div>
   );
 };
 
 export default function SignUp() {
-  const handleSubmit = (data: any) => {
+
+  const handleSubmit = (data: object) => {
     alert(JSON.stringify(data));
   }
 
   return (
-    <Form
-      onSubmit={handleSubmit}
-      render={(formRenderProps) => (
-        <form onSubmit={formRenderProps.onSubmit} className="k-form">
+    <>
+      {/*
+      <ProgressBar value={50} labelVisible={false}></ProgressBar>
+      <ChunkProgressBar min={0} max={5} value={3}></ChunkProgressBar>
+      <Stepper value={3} items={stepperItems}></Stepper>
+      */}
 
-          <label className="k-form-field">
-            <span>Username</span>
+      <Form
+        onSubmit={handleSubmit}
+        render={(formRenderProps) => (
+          <FormElement>
             <Field
+              label="Username"
               name="username"
               component={CustomInput}
               validator={requiredValidator}
             />
-          </label>
 
-          <label className="k-form-field">
-            <span>Password</span>
             <Field
+              label="Password"
               name="password"
-              minLength={6}
-              maxLength={18}
-              component={Input}
+              type="password"
+              component={CustomInput}
               validator={requiredValidator}
             />
-          </label>
 
-          <label className="k-form-field">
-            <span>Country</span>
+            {/*
+            <Label>Preferred contact method:</Label>
             <Field
-              style={{ width: "100%" }}
-              name="country"
-              component={DropDownList}
-              data={countries}
-              validator={requiredValidator}
+              name="contact"
+              label="Preferred contact method:"
+              component={RadioGroup}
+              data={[
+                { label: "Email", value: "email" },
+                { label: "Text", value: "text" },
+                { label: "Phone", value: "phone" },
+              ]}
             />
-          </label>
+            */}
 
-          <div className="k-form-field">
-            <Field
-              name="terms"
-              component={Checkbox}
-              label="I accept the terms of service."
-              validator={requiredValidator}
-            />
-          </div>
+            {/*
+            <RangeSlider
+              step={25}
+              min={0}
+              max={500}
+              defaultValue={{ start: 0, end: 500 }}
+            >
+              <SliderLabel position={0}>0</SliderLabel>
+              <SliderLabel position={100}>100</SliderLabel>
+              <SliderLabel position={200}>200</SliderLabel>
+              <SliderLabel position={300}>300</SliderLabel>
+              <SliderLabel position={400}>400</SliderLabel>
+              <SliderLabel position={500}>500</SliderLabel>
+            </RangeSlider>
+            */}
 
-          <div>
-            <button
-              className="k-button k-primary"
-              disabled={!formRenderProps.allowSubmit}>
-              Submit
-            </button>
-          </div>
-        </form>
-      )}>
-    </Form>
+            <div className="k-form-buttons">
+              <Button
+                primary={true}
+                type="submit">
+                Submit
+              </Button>
+            </div>
+          </FormElement>
+        )}>
+      </Form>
+    </>
   )
 };

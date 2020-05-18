@@ -1,9 +1,9 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router";
 
-import { Button } from '@progress/kendo-react-buttons';
-import { Avatar, Drawer, DrawerContent } from "@progress/kendo-react-layout";
+import { Button } from "@progress/kendo-react-buttons";
+import { Avatar, Drawer, DrawerContent, DrawerItemProps } from "@progress/kendo-react-layout";
 import { DrawerSelectEvent } from "@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent";
 
 const user = {
@@ -15,11 +15,17 @@ const user = {
 
 const items = [
   { text: "Home", icon: "k-i-globe-outline", route: "/", children: null },
+  { text: "Sign Up", icon: "k-i-plus-outline", route: "/signup", children: null },
   { text: "Calendar", icon: "k-i-calendar", route: "/calendar", children: null },
-  { text: "Products", icon: 'k-i-cart', route: '/products', children: null },
-  { text: "Sign Up", icon: 'k-i-plus-outline', route: '/signup', children: null },
-  { text: "Our Team", icon: 'k-i-user', route: '/team', children: null },
+  { text: "Products", icon: "k-i-cart", route: "/products", children: null },
+  { text: "Our Team", icon: "k-i-user", route: "/team", children: null },
 ];
+
+/*
+const CustomDrawerItem = (props: DrawerItemProps) => {
+  return <div>{props.text}</div>
+}
+*/
 
 const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
   const history = useHistory();

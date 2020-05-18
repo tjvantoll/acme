@@ -1,53 +1,26 @@
 import React from "react";
+import { ToolbarItem, ToolbarSpacer, ToolbarSeparator } from "@progress/kendo-react-buttons";
+import { DropDownList } from "@progress/kendo-react-dropdowns";
 import {
-  Scheduler,
   DayView,
   MonthView,
-  SchedulerItem,
-  SchedulerItemProps
+  Scheduler,
+  SchedulerFooter,
+  SchedulerHeader,
+  SchedulerFooterProps,
 } from '@progress/kendo-react-scheduler';
-import Chance from "chance";
 
-const chance = new Chance();
-const today = new Date();
-const year = today.getFullYear();
-const month = ("0" + (today.getMonth() + 1)).slice(-2);
-const day = ("0" + today.getDate()).slice(-2);
-const data: Array<any> = [];
-
-for (let i = 0; i < 5; i++) {
-  const startHourInt = chance.integer({ min: 8, max: 16});
-  const endHourInt = startHourInt + 1;
-  const startHour = ("0" + startHourInt).slice(-2);
-  const endHour = ("0" + endHourInt).slice(-2);
-
-  data.push({
-    id: i,
-    title: chance.company(),
-    start: new Date(`${year}-${month}-${day}T${startHour}:00:00.000Z`),
-    end: new Date(`${year}-${month}-${day}T${endHour}:00:00.000Z`),
-    isAllDay: chance.coin() === "heads"
-  });
-}
-
-// {props.name} ???
-const CustomItem = (props: SchedulerItemProps) => (
-  <SchedulerItem
-    {...props}
-    style={{ ...props.style, backgroundColor: props.isAllDay ? "blue" : "red" }}
-  >
-    
-  </SchedulerItem>
-);
-
+import { getRandomEvents } from "../data/events";
 
 export default function Calendar() {
+  const randomEvents = getRandomEvents();
+  const today = new Date();
+
   return (
     <Scheduler
-      data={data}
+      data={randomEvents}
       defaultDate={today}
       timezone="Etc/UTC"
-      item={CustomItem}
     >
       <DayView />
       <MonthView />
