@@ -33,8 +33,10 @@
 
 - Grid ❌
   - Checkbox Filter
+  - https://www.telerik.com/kendo-react-ui/components/grid/columns/column-menu/#toc-checkbox-filter
 
 - New features: TreeList ❌
+  - https://www.telerik.com/kendo-react-ui/components/treelist/
   - Row Virtualization
   - Pager
   - Drag & Drop
