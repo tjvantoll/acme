@@ -1,56 +1,30 @@
 import React from "react";
-import {
-  Filter,
-  Operators,
-  TextFilter,
-  NumericFilter,
-  DateFilter,
-  BooleanFilter,
-} from "@progress/kendo-react-data-tools";
-import { filterBy, CompositeFilterDescriptor } from "@progress/kendo-data-query";
-import { Grid, GridColumn } from "@progress/kendo-react-grid";
-import Chance from "chance";
+import { Grid, GridColumn, GridColumnMenuCheckboxFilter, GridColumnMenuCheckboxFilterProps } from "@progress/kendo-react-grid";
 
-const chance = new Chance();
-const acmeProducts: Array<any> = [];
-for (var i = 0; i < 50; i++) {
-  acmeProducts.push({
-    name: chance.capitalize(`${chance.first()} ${chance.animal()}`),
-    price: chance.integer({ min: 10, max: 10000 }),
-    lastOrder: chance.date({ year: 2019 }),
-  })
-}
+import { getRandomProducts } from "../data/products";
 
 export default function Products() {
-  const [filter, setFilter] = React.useState<CompositeFilterDescriptor>({
-    logic: "and",
-    filters: [
-      { field: "price", operator: "gt", value: 4000 }
-    ]
-  })
+  const products = getRandomProducts();
 
-  const onFilterChange = (event: any) => {
-    setFilter(event.filter);
+  /*
+  const CustomColumnMenu = (props: GridColumnMenuCheckboxFilterProps) => {
+    console.log(JSON.stringify(props));
+    return (
+      <GridColumnMenuCheckboxFilter {...props} data={products} expanded={true} />
+    )
   }
+  */
 
   return (
-    <React.Fragment>
-      <Filter
-        value={filter}
-        onChange={onFilterChange}
-        fields={[
-          { name: "name", label: "Name", filter: TextFilter, operators: Operators.text },
-          { name: "price", label: "Price", filter: NumericFilter, operators: Operators.numeric },
-          { name: "lastOrder", label: "Last Order", filter: DateFilter, operators: Operators.date }
-        ]}
-      />
+    <>
       <Grid
-        data={filterBy(acmeProducts, filter)}
+        data={products}
       >
         <GridColumn field="name" title="Name" width="300px" />
         <GridColumn field="price" title="Price" format="{0:c2}" />
         <GridColumn field="lastOrder" title="Last Order" format="{0:d}" />
+        <GridColumn field="inStock" title="In Stock" />
       </Grid>
-    </React.Fragment>
+    </>
   );
 }
