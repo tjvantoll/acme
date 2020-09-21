@@ -3,7 +3,8 @@ import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router";
 
 import { Button } from "@progress/kendo-react-buttons";
-import { Avatar, Drawer, DrawerContent, DrawerItemProps } from "@progress/kendo-react-layout";
+import { Badge, BadgeContainer } from "@progress/kendo-react-indicators";
+import { AppBar, AppBarSection, AppBarSpacer, Avatar, Drawer, DrawerContent } from "@progress/kendo-react-layout";
 import { DrawerSelectEvent } from "@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent";
 
 const user = {
@@ -19,13 +20,8 @@ const items = [
   { text: "Calendar", icon: "k-i-calendar", route: "/calendar", children: null },
   { text: "Products", icon: "k-i-cart", route: "/products", children: null },
   { text: "Our Team", icon: "k-i-user", route: "/team", children: null },
+  { text: "Planning", icon: "k-i-folder", route: "/planning", children: null },
 ];
-
-/*
-const CustomDrawerItem = (props: DrawerItemProps) => {
-  return <div>{props.text}</div>
-}
-*/
 
 const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
   const history = useHistory();
@@ -36,7 +32,6 @@ const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
     setSelectedId(e.itemIndex);
     setExpanded(false);
     history.push(e.itemTarget.props.route);
-    // this.props.history.push(e.itemTarget.props.route);
   }
   const closeDrawer = () => {
     setExpanded(false);
@@ -59,6 +54,45 @@ const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
         onOverlayClick={closeDrawer}
       >
         <DrawerContent>
+          <AppBar>
+            <AppBarSection>
+              <Button icon="menu" look="flat" onClick={toggleDrawer} />
+            </AppBarSection>
+
+            <AppBarSpacer style={{ width: 4 }} />
+
+            <AppBarSection>
+              <h1>ACME Industries</h1>
+            </AppBarSection>
+
+            <AppBarSpacer style={{ width: 32 }} />
+
+            <AppBarSection>
+              <ul>
+                <li>
+                  <BadgeContainer>
+                    <span>What's New</span>
+                    <Badge shape="dot" themeColor="tertiary" />
+                  </BadgeContainer>
+                </li>
+                <li><span>About</span></li>
+                <li><span>Contacts</span></li>
+              </ul>
+            </AppBarSection>
+
+            <AppBarSpacer />
+
+            <AppBarSection>
+              <BadgeContainer>
+                <Avatar shape="circle" type="image">
+                  <img alt="Profile" src={user.img} />
+                </Avatar>
+                <Badge>3</Badge>
+              </BadgeContainer>
+            </AppBarSection>
+          </AppBar>
+
+          {/*
           <div className="header">
             <h1>
               <Button icon="menu" look="flat" onClick={toggleDrawer} />
@@ -68,6 +102,7 @@ const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
               </Avatar>
             </h1>
           </div>
+          */}
           {props.children}
         </DrawerContent>
       </Drawer>

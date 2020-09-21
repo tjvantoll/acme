@@ -5,6 +5,7 @@ import DrawerRouterContainer from "./components/DrawerRouterContainer";
 import Calendar from "./components/Calendar";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+import Planning from "./components/Planning";
 import Products from "./components/Products";
 import Team from "./components/Team";
 
@@ -25,6 +26,9 @@ export default function App() {
             </Route>
             <Route path="/calendar">
               <Calendar />
+            </Route>
+            <Route path="/planning">
+              <Planning />
             </Route>
             <Route exact path="/">
               <Home />

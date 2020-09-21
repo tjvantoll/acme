@@ -8,10 +8,10 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/*
 h1 {
   font-family: Ubuntu;
   background: url("/header.svg") no-repeat;
@@ -57,6 +57,33 @@ h1 span {
     font-size: 1.5rem;
   }
 }
+*/
+
+.k-appbar {
+  font-family: Ubuntu;
+  background: url("/header.svg") no-repeat;
+  color: white;
+
+  ul {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  li {
+    margin: 0 10px;
+  }
+  li:hover {
+    cursor: pointer;
+    color: #84cef1;
+  }
+  .k-button {
+    padding: 0;
+    color: white;
+    font-size: 30px;
+  }
+}
 
 .k-drawer-item .k-item-text {
   align-self: center;
@@ -76,10 +103,7 @@ h1 span {
 
 /* HOME */
 
-.k-listview-header {
-  padding: 0.5rem 1.5rem;
-}
-.k-listview-content {
+.cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -91,6 +115,16 @@ h1 span {
 }
 .k-card-actions {
   flex-wrap: nowrap;
+}
+
+.filter-container {
+  margin-left: 2rem;
+  & > span {
+    display: inline-block;
+    padding-right: 0.5rem;
+    position: relative;
+    top: -3px;
+  }
 }
 
 /* SIGN UP */
@@ -107,6 +141,10 @@ h1 span {
   margin-bottom: 1rem;
 }
 
+.k-textarea > .k-input {
+  width: 100%;
+}
+
 .k-radio-list {
   margin-top: 1rem;
 }
@@ -119,4 +157,9 @@ h1 span {
 
 .k-scheduler-footer .k-dropdown {
   margin-left: 5px;
+}
+
+/* PRODUCTS */
+.k-grid {
+  transition: opacity 0.5s;
 }
