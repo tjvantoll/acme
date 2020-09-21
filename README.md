@@ -1,6 +1,6 @@
 # KendoReact ACME Sample
 
-- New component: Gantt Chart ❌
+- New component: Gantt Chart ✅
   - https://www.telerik.com/kendo-react-ui/components/gantt/
 
 - New component: AppBar ✅
@@ -24,7 +24,7 @@
 
 ---
 
-- Grid ❌
+- Grid ✅
   - Row pinning
     - https://www.telerik.com/kendo-react-ui/components/grid/rows/row-pin/
   - Customizable pager
@@ -32,7 +32,7 @@
   - Column pinning through column menu
     - https://www.telerik.com/kendo-react-ui/components/grid/columns/locked/#locked-columns-with-column-menu
 
-- Editor ❌
+- Editor ✅
   - Insert image dialog updates
   - Font color and background color tools
     - https://www.telerik.com/kendo-react-ui/components/editor/tools/
@@ -41,7 +41,7 @@
 
 ---
 
-- New and improved documentation ❌
+- New and improved documentation ✅
 
 ---
 

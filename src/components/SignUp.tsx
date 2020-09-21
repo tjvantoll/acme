@@ -1,9 +1,25 @@
 import React from "react";
 import { Button } from "@progress/kendo-react-buttons";
 import { Field, Form, FormElement } from "@progress/kendo-react-form";
-import { FloatingLabel } from '@progress/kendo-react-labels';
+import { Editor, EditorTools } from "@progress/kendo-react-editor";
 import { Input, TextArea } from "@progress/kendo-react-inputs";
+import { Label, FloatingLabel } from '@progress/kendo-react-labels';
 import { Error } from "@progress/kendo-react-labels";
+
+const {
+  Bold, Italic, Underline, Strikethrough, Subscript, Superscript,
+  ForeColor, BackColor, CleanFormatting,
+  AlignLeft, AlignCenter, AlignRight, AlignJustify,
+  Indent, Outdent, OrderedList, UnorderedList,
+  Undo, Redo, FontSize, FontName, FormatBlock,
+  Link, Unlink, InsertImage, ViewHtml,
+  InsertTable, InsertFile,
+  SelectAll, Print, Pdf,
+  AddRowBefore, AddRowAfter, AddColumnBefore, AddColumnAfter,
+  DeleteRow, DeleteColumn, DeleteTable,
+  MergeCells, SplitCell,
+  FindAndReplace
+} = EditorTools;
 
 const requiredValidator = (value: any) => value ? "" : "This field is required.";
 
@@ -47,6 +63,7 @@ export default function SignUp() {
               validator={requiredValidator}
             />
 
+            {/*
             <FloatingLabel
               className="k-textarea-container"
               editorId="reason"
@@ -57,6 +74,16 @@ export default function SignUp() {
                 autoSize={true}
               />
             </FloatingLabel>
+            */}
+
+            <Label>Why do you want to join ACME?</Label>
+            <Editor
+              tools={[
+                [Bold, Italic, Underline, Strikethrough, FindAndReplace]
+                
+              ]}
+              contentStyle={{ height: 200 }}
+              defaultContent=""></Editor>
 
             <div className="k-form-buttons">
               <Button

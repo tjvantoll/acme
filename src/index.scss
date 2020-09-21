@@ -7,8 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+.k-drawer-content {
+  width: 100%;
 }
 
 /*
@@ -160,6 +160,7 @@ h1 span {
 }
 
 /* PRODUCTS */
+
 .k-grid {
   transition: opacity 0.5s;
 }
