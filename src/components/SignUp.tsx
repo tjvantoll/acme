@@ -79,7 +79,8 @@ export default function SignUp() {
             <Label>Why do you want to join ACME?</Label>
             <Editor
               tools={[
-                [Bold, Italic, Underline, Strikethrough, FindAndReplace]
+                [Bold, Italic, Underline, Strikethrough, FindAndReplace],
+                [ForeColor, BackColor, CleanFormatting, Print, Pdf, InsertFile, SelectAll]
                 
               ]}
               contentStyle={{ height: 200 }}
