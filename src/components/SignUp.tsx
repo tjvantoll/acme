@@ -63,29 +63,6 @@ export default function SignUp() {
               validator={requiredValidator}
             />
 
-            {/*
-            <FloatingLabel
-              className="k-textarea-container"
-              editorId="reason"
-              label="Why do you want to join ACME?">
-              <TextArea
-                name="reason"
-                id="reason"
-                autoSize={true}
-              />
-            </FloatingLabel>
-            */}
-
-            <Label>Why do you want to join ACME?</Label>
-            <Editor
-              tools={[
-                [Bold, Italic, Underline, Strikethrough, FindAndReplace],
-                [ForeColor, BackColor, CleanFormatting, Print, Pdf, InsertFile, SelectAll]
-                
-              ]}
-              contentStyle={{ height: 200 }}
-              defaultContent=""></Editor>
-
             <div className="k-form-buttons">
               <Button
                 primary={true}
