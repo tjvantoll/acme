@@ -15,6 +15,7 @@ body {
 .header h1 {
   font-family: Ubuntu;
   background: url("/header.svg") no-repeat;
+  background-size: cover;
   color: white;
   margin: 0;
   font-weight: bold;
@@ -61,6 +62,7 @@ body {
 .k-appbar {
   font-family: Ubuntu;
   background: url("/header.svg") no-repeat;
+  background-size: cover;
   color: white;
 
   ul {

@@ -54,15 +54,40 @@ const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
         onOverlayClick={closeDrawer}
       >
         <DrawerContent>
-          <div className="header">
-            <h1>
+          <AppBar>
+            <AppBarSection>
               <Button icon="menu" look="flat" onClick={toggleDrawer} />
-              <span className="title">ACME Industries</span>
-              <Avatar shape="rounded" type="image">
-                <img alt={user.name} src={user.img} />
-              </Avatar>
-            </h1>
-          </div>
+            </AppBarSection>
+            <AppBarSpacer style={{ width: 4 }} />
+            
+            <AppBarSection>
+              <h1>ACME Industries</h1>
+            </AppBarSection>
+            
+            <AppBarSpacer style={{ width: 32 }} />
+
+            <AppBarSection>
+              <ul>
+                <BadgeContainer>
+                  <span>What's New</span>
+                  <Badge shape="dot" themeColor="tertiary" />
+                </BadgeContainer>
+                <li><span>About</span></li>
+                <li><span>Contacts</span></li>
+              </ul>
+            </AppBarSection>
+            
+            <AppBarSpacer />
+            
+            <AppBarSection>
+              <BadgeContainer>
+                <Avatar shape="circle" type="image">
+                  <img alt="Profile" src={user.img} />
+                </Avatar>
+                <Badge>3</Badge>
+              </BadgeContainer>
+            </AppBarSection>
+          </AppBar>
           {props.children}
         </DrawerContent>
       </Drawer>

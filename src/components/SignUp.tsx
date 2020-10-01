@@ -63,6 +63,15 @@ export default function SignUp() {
               validator={requiredValidator}
             />
 
+            <Label>Why do you want to join ACME?</Label>
+            <Editor
+              tools={[
+                [Bold, Italic, ViewHtml],
+                [ForeColor, BackColor, CleanFormatting, Print, Pdf, InsertFile, SelectAll, FindAndReplace]
+              ]}
+              contentStyle={{ height: 200 }}
+              defaultContent=""></Editor>
+
             <div className="k-form-buttons">
               <Button
                 primary={true}
