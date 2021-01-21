@@ -1,26 +1,25 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import { useHistory } from "react-router";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
-import { Button } from "@progress/kendo-react-buttons";
-import { Badge, BadgeContainer } from "@progress/kendo-react-indicators";
-import { AppBar, AppBarSection, AppBarSpacer, Avatar, Drawer, DrawerContent } from "@progress/kendo-react-layout";
-import { DrawerSelectEvent } from "@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent";
+import { Button } from '@progress/kendo-react-buttons';
+import { AppBar, AppBarSection, AppBarSpacer, Avatar, Drawer, DrawerContent } from '@progress/kendo-react-layout';
+import { DrawerSelectEvent } from '@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent';
 
 const user = {
-  initials: "TV",
-  name: "TJ VanToll",
-  position: "Developer Advocate",
-  img: "https://pbs.twimg.com/profile_images/1029805644310827008/wkAPO_XC_400x400.jpg"
+  initials: 'TV',
+  name: 'TJ VanToll',
+  position: 'Developer Advocate',
+  img: 'https://pbs.twimg.com/profile_images/1029805644310827008/wkAPO_XC_400x400.jpg'
 };
 
 const items = [
-  { text: "Home", icon: "k-i-globe-outline", route: "/", children: null },
-  { text: "Sign Up", icon: "k-i-plus-outline", route: "/signup", children: null },
-  { text: "Calendar", icon: "k-i-calendar", route: "/calendar", children: null },
-  { text: "Products", icon: "k-i-cart", route: "/products", children: null },
-  { text: "Our Team", icon: "k-i-user", route: "/team", children: null },
-  { text: "Planning", icon: "k-i-folder", route: "/planning", children: null },
+  { text: 'Home', icon: 'k-i-globe-outline', route: '/', children: null },
+  { text: 'Sign Up', icon: 'k-i-plus-outline', route: '/signup', children: null },
+  { text: 'Calendar', icon: 'k-i-calendar', route: '/calendar', children: null },
+  { text: 'Products', icon: 'k-i-cart', route: '/products', children: null },
+  { text: 'Our Team', icon: 'k-i-user', route: '/team', children: null },
+  { text: 'Planning', icon: 'k-i-folder', route: '/planning', children: null },
 ];
 
 const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
@@ -59,33 +58,17 @@ const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
               <Button icon="menu" look="flat" onClick={toggleDrawer} />
             </AppBarSection>
             <AppBarSpacer style={{ width: 4 }} />
-            
+
             <AppBarSection>
               <h1>ACME Industries</h1>
             </AppBarSection>
-            
-            <AppBarSpacer style={{ width: 32 }} />
+
+            <AppBarSpacer />
 
             <AppBarSection>
-              <ul>
-                <BadgeContainer>
-                  <span>What's New</span>
-                  <Badge shape="dot" themeColor="tertiary" />
-                </BadgeContainer>
-                <li><span>About</span></li>
-                <li><span>Contacts</span></li>
-              </ul>
-            </AppBarSection>
-            
-            <AppBarSpacer />
-            
-            <AppBarSection>
-              <BadgeContainer>
-                <Avatar shape="circle" type="image">
-                  <img alt="Profile" src={user.img} />
-                </Avatar>
-                <Badge>3</Badge>
-              </BadgeContainer>
+              <Avatar shape="circle" type="image">
+                <img alt="Profile" src={user.img} />
+              </Avatar>
             </AppBarSection>
           </AppBar>
           {props.children}

@@ -1,13 +1,16 @@
-import React from "react";
-import Chance from "chance";
-import { ChipList, ButtonGroup, Button, ChipListChangeEvent } from "@progress/kendo-react-buttons";
-import { Rating } from "@progress/kendo-react-inputs";
-import { Card, CardHeader, CardBody, CardActions } from "@progress/kendo-react-layout";
-import Render from "../components/Render";
+import Chance from 'chance';
+import { TileLayout, TileLayoutItem } from '@progress/kendo-react-layout';
 
 const chance = new Chance();
 
-const people: Array<any> = [];
+type Person = {
+  name: string;
+  title: string;
+  email: string;
+  rating: number;
+}
+
+const people: Array<Person> = [];
 for (let i = 0; i < 100; i++) {
   people.push({
     name: chance.name(),
@@ -16,52 +19,39 @@ for (let i = 0; i < 100; i++) {
     rating: Math.ceil(Math.random() * 5),
   });
 }
-
-const filters = [
-  { text: "⭐", value: 1 },
-  { text: "⭐⭐", value: 2 },
-  { text: "⭐⭐⭐", value: 3 },
-  { text: "⭐⭐⭐⭐", value: 4 },
-  { text: "⭐⭐⭐⭐⭐", value: 5 },
-]
-
 export default function Home() {
-  const [activeFilters, setActiveFilters] = React.useState<Array<number>>([1, 2, 3, 4, 5]);
 
-  const filterData = (data: ChipListChangeEvent) => {
-    setActiveFilters(data.value);
+  interface CustomItemProps {
+    person: Person;
   }
+  const CustomItem = ({ person }: CustomItemProps) => {
+    return (
+      <div className="custom-tile">
+        <h3>{person.name}</h3>
+        <p>👤 {person.title}</p>
+        <p>✉️ {person.email}</p>
+      </div>
+    )
+  }
+
+  const tiles: TileLayoutItem[] = people.map((person, index) => {
+    return {
+      body: <p>{person.name}</p>,
+      header: person.title,
+      defaultPosition: {
+        col: (index % 3) + 1,
+        row: (Math.floor(index / 3))
+      },
+      item: <CustomItem person={person} />
+    }
+  });
 
   return (
     <>
-      <div className="filter-container">
-        <span>Filter:</span>
-        <ChipList
-          selection="multiple"
-          defaultData={filters}
-          defaultValue={activeFilters}
-          onChange={filterData}
-        />
-      </div>
-      <div className="cards">
-        {people.map(person => (
-          <Render if={activeFilters.includes(person.rating)} key={person.name}>
-            <Card>
-              <CardHeader>
-                {person.name}
-              </CardHeader>
-              <CardBody>
-                <p>👤 {person.title}</p>
-                <p>✉️ {person.email}</p>
-                <Rating defaultValue={person.rating} disabled={true} />
-              </CardBody>
-              <CardActions>
-                <span className="k-button k-flat k-primary">Message</span>
-                <span className="k-button k-flat k-primary">Email</span>
-              </CardActions>
-            </Card>
-          </Render>
-        ))}
+      <div>
+        <TileLayout
+          columns={3}
+          items={tiles} />
       </div>
     </>
   );
