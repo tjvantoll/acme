@@ -1,16 +1,3 @@
-# Notes
-
-1) As soon as I updated my sample to the new version of KendoReact I got the following error:
-
-```
-forwardRef render functions accept exactly two parameters: props and ref. Did you forget to use the ref parameter?
-```
-
-It’s coming from an `AddButton.tsx` file within KendoReact, but I don’t have much more to go on. You can recreate the problem by running my sample app.
-
-2) I’m having trouble getting the TileLayout to work as expected. I threw together a quick StackBlitz to show you what I mean: https://stackblitz.com/edit/react-4zbmet?file=app/main.jsx.
-
-
 # KendoReact ACME Sample
 
 - New component: TileLayout ✅
