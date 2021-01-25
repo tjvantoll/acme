@@ -19,7 +19,7 @@ export function getRandomEvents() {
       title: chance.company(),
       start: new Date(`${year}-${month}-${day}T${startHour}:00:00.000Z`),
       end: new Date(`${year}-${month}-${day}T${endHour}:00:00.000Z`),
-      isAllDay: chance.coin() === "heads"
+      isAllDay: Math.floor(Math.random() * 3) === 2,
     });
   }
 

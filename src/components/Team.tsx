@@ -1,79 +1,73 @@
-import React from "react";
-import { TreeListPDFExport } from "@progress/kendo-react-pdf";
-import {
-  TreeList, TreeListToolbar, orderBy, filterBy, mapTree, extendDataItem,
-  // TreeListTextFilter, TreeListNumericFilter, TreeListDateFilter, TreeListBooleanFilter
-} from "@progress/kendo-react-treelist";
-import employees from "../data/employees";
+import React from 'react';
+import { ListBox, ListBoxToolbar, processListBoxData } from '@progress/kendo-react-listbox';
+import { ListBoxItemClickEvent, ListBoxToolbarClickEvent } from '@progress/kendo-react-listbox/dist/npm/interfaces/ListBoxEvents';
 
-const subItemsField = 'employees';
-const expandField = 'expanded';
+import { generateRandomPeople } from '../data/people';
 
 export default function Team() {
-  let gridPDFExport: TreeListPDFExport;
-  const [data] = React.useState([...employees]);
-  const [dataState] = React.useState({
-    filter: []
-  });
-  const [expanded, setExpanded] = React.useState([1, 2, 32]);
-  const [columns] = React.useState([
-    { field: 'name', title: 'Name', width: 200, expandable: true, locked: true },
-    { field: 'position', title: 'Position', width: 150 },
-    { field: 'hireDate', title: 'Hire Date', width: 100, format: '{0:d}' },
-    { field: 'phone', title: 'Phone', width: 100 },
-    { field: 'extension', title: 'Extension', width: 100 },
-    { field: 'fullTime', title: 'Full Time', width: 100 },
-    { field: 'timeInPosition', title: 'Tenure', width: 50 }
-  ]);
+  const [team1, setTeam1] = React.useState(generateRandomPeople(20));
+  const [team2, setTeam2] = React.useState(generateRandomPeople(20));
 
-  const onExpandChange = (e: any) => {
-    setExpanded(e.value ?
-      expanded.filter(id => id !== e.dataItem.id) :
-      [...expanded, e.dataItem.id]
-    );
+  const handleItemClick = (event: ListBoxItemClickEvent) => {
+    const updatedTeam1 = [...team1];
+    const updatedTeam2 = [...team2];
+    const updatedName = event.dataItem.name;
+
+    [...updatedTeam1, ...updatedTeam2].map(item => {
+      if (item.name === updatedName) {
+        item.selected = !item.selected;
+      } else {
+        item.selected = false;
+      }
+      return item;
+    });
+
+    setTeam1(updatedTeam1);
+    setTeam2(updatedTeam2);
   }
 
-  const processData = () => {
-    let filteredData = filterBy(data, dataState.filter, subItemsField)
-    let sortedData = orderBy(filteredData, [{ field: "name", dir: "asc" }], subItemsField)
-    return mapTree(sortedData, subItemsField, (item) =>
-      extendDataItem(item, subItemsField, {
-        [expandField]: expanded.includes(item.id)
-      })
-    );
+  const handleToolBarClick = (e: ListBoxToolbarClickEvent) => {
+    const result = processListBoxData(team1, team2, e.toolName || '', "selected");
+    console.log(result);
+    setTeam1(result.listBoxOneData);
+    setTeam2(result.listBoxTwoData);
   }
-
-  const exportPDF = () => {
-    gridPDFExport.save();
-  }
-
-  const treeList = <TreeList
-    expandField={expandField}
-    subItemsField={subItemsField}
-    onExpandChange={onExpandChange}
-    {...dataState}
-    data={processData()}
-    columns={columns}
-    toolbar={
-      <TreeListToolbar>
-        <button
-          title="Export PDF"
-          className="k-button k-primary"
-          style={{ width: "100px" }}
-          onClick={exportPDF}
-        >
-          Export PDF
-      </button>
-      </TreeListToolbar>
-    }
-  />
 
   return (
     <>
-      {treeList}
-      <TreeListPDFExport ref={pdfExport => (gridPDFExport = pdfExport as TreeListPDFExport)}>
-        {treeList}
-      </TreeListPDFExport>
+      <div className="two-columns">
+
+        <div>
+          <h2>Team 1</h2>
+          <ListBox
+            style={{ height: "600px", width: "300px" }}
+            data={team1}
+            textField="name"
+            selectedField="selected"
+            onItemClick={e => { handleItemClick(e) }}
+            toolbar={() => {
+              return (
+                <ListBoxToolbar
+                  tools={['transferTo', 'transferFrom', 'moveUp', 'moveDown']}
+                  data={team1}
+                  dataConnected={team2}
+                  onToolClick={handleToolBarClick}
+                />
+              );
+            }}
+          />
+        </div>
+        <div>
+          <h2>Team 2</h2>
+          <ListBox
+            style={{ height: "600px", width: "300px" }}
+            data={team2}
+            textField="name"
+            selectedField="selected"
+            onItemClick={e => { handleItemClick(e) }}
+          />
+        </div>
+      </div>
     </>
   );
 }

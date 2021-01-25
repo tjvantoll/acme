@@ -1,5 +1,4 @@
 import React from "react";
-import { MultiColumnComboBox } from '@progress/kendo-react-dropdowns';
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
 
 import { getRandomProducts } from "../data/products";
@@ -13,17 +12,6 @@ export default function Products() {
 
   return (
     <>
-      <h2>🎉 Dropdown Playground 🎉</h2>
-      <MultiColumnComboBox
-        data={products}
-        columns={[
-          { field: 'name', header: 'Name', width: '300px' },
-          { field: 'price', header: 'Price', width: '100px' },
-          { field: 'inStock', header: 'In Stock', width: '100px' }
-        ]}
-        textField={"name"} />
-      
-      <h2>👩‍💼 Grid and Stuff 👨‍💼</h2>
       <Grid
         data={products}
         style={{ opacity: products.length > 0 ? 1 : 0 }}>

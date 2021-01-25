@@ -1,25 +1,82 @@
-import React from "react";
-import { Button } from "@progress/kendo-react-buttons";
-import { Field, Form, FormElement } from "@progress/kendo-react-form";
-import { Input } from "@progress/kendo-react-inputs";
-import { Error } from "@progress/kendo-react-labels";
+import React from 'react';
+import { Button } from '@progress/kendo-react-buttons';
+import { MultiColumnComboBox } from '@progress/kendo-react-dropdowns';
+import { Field, Form, FormElement } from '@progress/kendo-react-form';
+import { Input, TextArea } from '@progress/kendo-react-inputs';
+import { Error, Label } from '@progress/kendo-react-labels';
 
-const requiredValidator = (value: any) => value ? "" : "This field is required.";
+import { getRandomProducts } from '../data/products';
+
+const requiredValidator = (value: any) => value ? '' : 'This field is required.';
 
 const CustomInput = (fieldRenderProps: any) => {
-  const { validationMessage, touched, ...others } = fieldRenderProps;
+  const { label, touched, validationMessage, ...others } = fieldRenderProps;
   return (
     <div>
-      <Input {...others} style={{ width: "100%" }} />
-      {
-        touched && validationMessage &&
-        <Error>{validationMessage}</Error>
-      }
+      <Label>
+        {label}:
+        <div>
+          <Input {...others} style={{ width: '100%' }} />
+          {
+            touched && validationMessage &&
+            <Error>{validationMessage}</Error>
+          }
+        </div>
+      </Label>
+    </div>
+  );
+};
+
+const CustomTextArea = (fieldRenderProps: any) => {
+  const { label, touched, validationMessage, ...others } = fieldRenderProps;
+  return (
+    <div>
+      <Label>
+        {label}:
+        <div>
+          <TextArea {...others} style={{ width: '100%' }} />
+          {
+            touched && validationMessage &&
+            <Error>{validationMessage}</Error>
+          }
+        </div>
+      </Label>
     </div>
   );
 };
 
 export default function SignUp() {
+  const [products, setProducts] = React.useState<Array<any>>([]);
+
+  React.useEffect(() => {
+    setProducts(getRandomProducts());
+  }, []);
+
+  const CustomComboBox = (fieldRenderProps: any) => {
+    const { label, touched, validationMessage, ...others } = fieldRenderProps;
+    return (
+      <div>
+        <Label>
+          {label}
+          <div>
+            <MultiColumnComboBox
+              {...others}
+              data={products}
+              columns={[
+                { field: 'name', header: 'Name', width: '300px' },
+                { field: 'price', header: 'Price', width: '100px' },
+                { field: 'inStock', header: 'In Stock', width: '100px' }
+              ]}
+              textField={"name"} />
+            {
+              touched && validationMessage &&
+              <Error>{validationMessage}</Error>
+            }
+          </div>
+        </Label>
+      </div>
+    );
+  }
 
   const handleSubmit = (data: object) => {
     alert(JSON.stringify(data));
@@ -32,17 +89,23 @@ export default function SignUp() {
         render={(formRenderProps) => (
           <FormElement>
             <Field
-              label="Username"
-              name="username"
+              label="Name"
+              name="name"
               component={CustomInput}
               validator={requiredValidator}
             />
 
             <Field
-              label="Password"
-              name="password"
-              type="password"
-              component={CustomInput}
+              label="Which product do you need help with?"
+              name="product"
+              component={CustomComboBox}
+              validator={requiredValidator}
+            />
+
+            <Field
+              label="What issue are you having?"
+              name="issue"
+              component={CustomTextArea}
               validator={requiredValidator}
             />
 

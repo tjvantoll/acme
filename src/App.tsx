@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import DrawerRouterContainer from "./components/DrawerRouterContainer";
+import RouterContainer from "./components/RouterContainer";
 import Calendar from "./components/Calendar";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -12,7 +12,7 @@ import Team from "./components/Team";
 export default function App() {
   return (
     <Router>
-      <DrawerRouterContainer>
+      <RouterContainer>
         <div className="page-container">
           <Switch>
             <Route path="/team">
@@ -35,7 +35,7 @@ export default function App() {
             </Route>
           </Switch>
         </div>
-      </DrawerRouterContainer>
+      </RouterContainer>
     </Router>
   );
 }

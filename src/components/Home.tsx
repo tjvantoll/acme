@@ -1,25 +1,16 @@
-import Chance from 'chance';
 import { TileLayout, TileLayoutItem } from '@progress/kendo-react-layout';
+import { FloatingActionButton } from '@progress/kendo-react-buttons';
+import { Icon } from '@progress/kendo-react-common';
 
-const chance = new Chance();
+import { Person, generateRandomPeople } from '../data/people';
 
-type Person = {
-  name: string;
-  title: string;
-  email: string;
-  rating: number;
-}
+const shareActions = [
+  { icon: 'facebook', text: 'Facebook' },
+  { icon: 'twitter', text: 'Twitter' },
+]
 
-const people: Array<Person> = [];
-for (let i = 0; i < 100; i++) {
-  people.push({
-    name: chance.name(),
-    title: chance.profession(),
-    email: chance.email(),
-    rating: Math.ceil(Math.random() * 5),
-  });
-}
 export default function Home() {
+  const people = generateRandomPeople(100);
 
   interface CustomItemProps {
     person: Person;
@@ -28,8 +19,8 @@ export default function Home() {
     return (
       <div className="custom-tile">
         <h3>{person.name}</h3>
-        <p>👤 {person.title}</p>
-        <p>✉️ {person.email}</p>
+        <p><Icon name="user" themeColor="primary" />{person.title}</p>
+        <p><Icon name="pencil" themeColor="info" />{person.email}</p>
       </div>
     )
   }
@@ -40,7 +31,6 @@ export default function Home() {
       header: person.title,
       defaultPosition: {
         col: (index % 3) + 1,
-        row: (Math.floor(index / 3))
       },
       item: <CustomItem person={person} />
     }
@@ -52,6 +42,12 @@ export default function Home() {
         <TileLayout
           columns={3}
           items={tiles} />
+        <FloatingActionButton
+          icon={'share'}
+          onClick={() => { }}
+          items={shareActions}
+          popupSettings={{ popupClass: 'share-popup' }}
+        />
       </div>
     </>
   );

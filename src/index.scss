@@ -58,23 +58,22 @@ body {
 
 .custom-tile {
   padding: 0 1em;
+  .k-icon {
+    padding-right: 6px;
+    margin-top: -2px;
+  }
 }
 
-/*
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.share-popup {
+  font-size: 2rem !important;
 }
 
-.k-card {
-  width: 225px;
-  margin: 20px;
+.k-fab-item-text {
+  font-size: 30px;
 }
-.k-card-actions {
-  flex-wrap: nowrap;
+.k-fab-item-icon {
+  font-size: 30px;
 }
-*/
 
 /* SIGN UP */
 
@@ -83,6 +82,13 @@ body {
   margin-bottom: 1rem;
 }
 
+.k-form {
+  width: 500px;
+}
+.k-form .k-label {
+  display: inline-block;
+  width: 100%;
+}
 .k-form .k-primary {
   margin-top: 1rem;
 }
@@ -112,4 +118,14 @@ body {
 
 .k-grid {
   transition: opacity 0.5s;
+}
+
+/* TEAM */
+
+.two-columns {
+  display: flex;
+}
+
+.k-listbox.k-listbox-toolbar-right .k-listbox-toolbar {
+  margin-right: 8px;
 }
