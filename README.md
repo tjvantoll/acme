@@ -34,7 +34,7 @@
 - Grid 🐎
   - Improved performance in state management for data cells.
 
-- Gantt ❌
+- Gantt ✅
   - Built-in editing
       - https://www.telerik.com/kendo-react-ui/components/gantt/editing/
 
@@ -42,7 +42,7 @@
   - New options and updated design
     - https://www.telerik.com/kendo-react-ui/components/layout/avatar/appearance/
 
-- Scheduler ❌
+- Scheduler ✅
   - Custom form and form editor
     - https://www.telerik.com/kendo-react-ui/components/scheduler/customization/form/overview/
   - Current time marker

@@ -28,7 +28,6 @@ export default function Team() {
 
   const handleToolBarClick = (e: ListBoxToolbarClickEvent) => {
     const result = processListBoxData(team1, team2, e.toolName || '', "selected");
-    console.log(result);
     setTeam1(result.listBoxOneData);
     setTeam2(result.listBoxTwoData);
   }

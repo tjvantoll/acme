@@ -12,7 +12,7 @@
 import React from 'react';
 
 const Render = (props: any) => {
-  let ui = null;
+  let ui;
 
   if (props.if) {
     ui = (

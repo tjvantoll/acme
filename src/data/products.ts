@@ -1,4 +1,4 @@
-import Chance from "chance";
+import Chance from 'chance';
 
 export function getRandomProducts() {
   const chance = new Chance();
