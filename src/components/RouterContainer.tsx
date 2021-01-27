@@ -16,7 +16,7 @@ const user = {
 
 const items = [
   { text: 'Home', icon: 'globe-outline', route: '/', children: null },
-  { text: 'Sign Up', icon: 'plus-outline', route: '/signup', children: null },
+  { text: 'Support', icon: 'plus-outline', route: '/support', children: null },
   { text: 'Calendar', icon: 'calendar', route: '/calendar', children: null },
   { text: 'Products', icon: 'cart', route: '/products', children: null },
   { text: 'Our Team', icon: 'user', route: '/team', children: null },
@@ -39,10 +39,6 @@ const RouterContainer = (props: React.PropsWithChildren<any>) => {
     setSelectedId(e.itemIndex);
     setExpanded(false);
     history.push(e.itemTarget.props.route);
-  }
-  const onBottomNavSelect = (e: any) => {
-    setSelectedId(e.itemIndex);
-    history.push(e.itemTarget.route);
   }
   const closeDrawer = () => {
     setExpanded(false);
@@ -85,14 +81,6 @@ const RouterContainer = (props: React.PropsWithChildren<any>) => {
           </AppBar>
 
           {props.children}
-
-          <BottomNavigation
-            items={items.map(item => ({
-              ...item,
-              selected: items[selectedId].text === item.text
-            }))}
-            onSelect={onBottomNavSelect}
-          />
         </DrawerContent>
       </Drawer>
     </div>

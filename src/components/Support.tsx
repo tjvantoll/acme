@@ -45,7 +45,7 @@ const CustomTextArea = (fieldRenderProps: any) => {
   );
 };
 
-export default function SignUp() {
+export default function Support() {
   const [products, setProducts] = React.useState<Array<any>>([]);
 
   React.useEffect(() => {
@@ -58,21 +58,19 @@ export default function SignUp() {
       <div>
         <Label>
           {label}
-          <div>
-            <MultiColumnComboBox
-              {...others}
-              data={products}
-              columns={[
-                { field: 'name', header: 'Name', width: '300px' },
-                { field: 'price', header: 'Price', width: '100px' },
-                { field: 'inStock', header: 'In Stock', width: '100px' }
-              ]}
-              textField={"name"} />
-            {
-              touched && validationMessage &&
-              <Error>{validationMessage}</Error>
-            }
-          </div>
+          <MultiColumnComboBox
+            {...others}
+            data={products}
+            columns={[
+              { field: 'name', header: 'Name', width: '300px' },
+              { field: 'price', header: 'Price', width: '100px' },
+              { field: 'inStock', header: 'In Stock', width: '100px' }
+            ]}
+            textField={"name"} />
+          {
+            touched && validationMessage &&
+            <Error>{validationMessage}</Error>
+          }
         </Label>
       </div>
     );

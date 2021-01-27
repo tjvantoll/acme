@@ -26,78 +26,17 @@ export default function Home() {
   const [filterValue, setFilterValue] = React.useState(null);
   const [expanded, setExpanded] = React.useState([locationTree[0][dataItemKey]]);
 
-  interface CustomItemProps {
-    person: Person;
-  }
-  const CustomItem = ({ person }: CustomItemProps) => {
-    return (
-      <div className="custom-tile">
-        <h3>{person.name}</h3>
-        <p><Icon name="user" themeColor="primary" />{person.title}</p>
-        <p><Icon name="globe" themeColor="success" />{person.location}</p>
-        <p><Icon name="pencil" themeColor="info" />{person.email}</p>
-      </div>
-    )
-  }
-
-  const treeData = React.useMemo(
-    () => processTreeData(locationTree, { expanded, filterValue }, fields),
-    [expanded, filterValue]
-  );
-
-  const tiles: TileLayoutItem[] = people.map((person, index) => {
-    return {
-      body: <p>{person.name}</p>,
-      header: person.title,
-      defaultPosition: {
-        col: (index % 3) + 1,
-      },
-      item: <CustomItem person={person} />
-    }
-  });
-
-  const onChange = (event) => {
-    setFilterValue(event.value);
-    const filteredPeople = allPeople.filter(person => {
-      if (!event.value) {
-        return true;
-      }
-      return person.location === event.value.text;
-    });
-    setPeople([...filteredPeople]);
-  }
-  const onExpandChange = React.useCallback(
-    event => setExpanded(expandedState(event.item, dataItemKey, expanded)),
-    [expanded]
-  );
-
   return (
     <>
-      <div>
-        <div className="filter">
-          <DropDownTree
-            data={treeData}
-            value={filterValue}
-            onChange={onChange}
-            placeholder="Select ..."
-            textField={textField}
-            dataItemKey={dataItemKey}
-            selectField={selectField}
-            expandField={expandField}
-            onExpandChange={onExpandChange}
-            label="Filter by location"
-          />
-        </div>
-        <TileLayout
-          columns={3}
-          items={tiles} />
-        <FloatingActionButton
-          icon={'share'}
-          onClick={() => { }}
-          items={shareActions}
-          popupSettings={{ popupClass: 'share-popup' }}
-          alignOffset={{ y: 75 }}
-        />
+      <div className="cards">
+        {people.map(person => (
+          <div className="custom-tile">
+            <h3>{person.name}</h3>
+            <p>{person.title}</p>
+            <p>{person.location}</p>
+            <p>{person.email}</p>
+          </div>
+        ))}
       </div>
     </>
   );
