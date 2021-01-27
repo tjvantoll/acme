@@ -96,6 +96,7 @@ export default function Home() {
           onClick={() => { }}
           items={shareActions}
           popupSettings={{ popupClass: 'share-popup' }}
+          alignOffset={{ y: 75 }}
         />
       </div>
     </>
