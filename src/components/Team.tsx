@@ -38,33 +38,11 @@ export default function Team() {
 
         <div>
           <h2>Team 1</h2>
-          <ListBox
-            style={{ height: "600px", width: "300px" }}
-            data={team1}
-            textField="name"
-            selectedField="selected"
-            onItemClick={e => { handleItemClick(e) }}
-            toolbar={() => {
-              return (
-                <ListBoxToolbar
-                  tools={['transferTo', 'transferFrom', 'moveUp', 'moveDown']}
-                  data={team1}
-                  dataConnected={team2}
-                  onToolClick={handleToolBarClick}
-                />
-              );
-            }}
-          />
+
         </div>
         <div>
           <h2>Team 2</h2>
-          <ListBox
-            style={{ height: "600px", width: "300px" }}
-            data={team2}
-            textField="name"
-            selectedField="selected"
-            onItemClick={e => { handleItemClick(e) }}
-          />
+
         </div>
       </div>
     </>
