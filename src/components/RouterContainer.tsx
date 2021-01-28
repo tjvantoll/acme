@@ -15,12 +15,12 @@ const user = {
 };
 
 const items = [
-  { text: 'Home', icon: 'globe-outline', route: '/', children: null },
-  { text: 'Support', icon: 'plus-outline', route: '/support', children: null },
-  { text: 'Calendar', icon: 'calendar', route: '/calendar', children: null },
-  { text: 'Products', icon: 'cart', route: '/products', children: null },
-  { text: 'Our Team', icon: 'user', route: '/team', children: null },
-  { text: 'Planning', icon: 'folder', route: '/planning', children: null },
+  { text: 'Home', icon: 'globe-outline', route: '/' },
+  { text: 'Support', icon: 'plus-outline', route: '/support' },
+  { text: 'Calendar', icon: 'calendar', route: '/calendar' },
+  { text: 'Products', icon: 'cart', route: '/products' },
+  { text: 'Our Team', icon: 'user', route: '/team' },
+  { text: 'Planning', icon: 'folder', route: '/planning' },
 ];
 
 const RouterContainer = (props: React.PropsWithChildren<any>) => {
