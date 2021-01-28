@@ -117,7 +117,6 @@ const onExpandChange = React.useCallback(
   icon={'share'}
   onClick={() => { }}
   items={shareActions}
-  popupSettings={{ popupClass: 'share-popup' }}
 />
 ```
 
@@ -149,6 +148,33 @@ alignOffset={{ y: 75 }}
 ## kr11
 
 ``` tsx
+<ListBox
+  style={{ height: "600px", width: "300px" }}
+  data={team1}
+  textField="name"
+  selectedField="selected"
+  onItemClick={e => { handleItemClick(e) }}
+/>
+```
+
+## kr12
+
+``` tsx
+toolbar={() => {
+  return (
+    <ListBoxToolbar
+      tools={['transferTo', 'transferFrom', 'moveUp', 'moveDown']}
+      data={team1}
+      dataConnected={team2}
+      onToolClick={handleToolBarClick}
+    />
+  );
+}}
+```
+
+## kr13
+
+``` tsx
 <p><Icon name="user" themeColor="primary" />{person.title}</p>
 <p><Icon name="globe" themeColor="success" />{person.location}</p>
 <p><Icon name="pencil" themeColor="info" />{person.email}</p>
@@ -164,7 +190,7 @@ result[fields.end] = [
 ].filter(Boolean).reduce((current, acc) => current || acc, '');
 ```
 
-## kr12
+## kr14
 
 ``` tsx
 const FormWithCustomEditor = (props) => {
