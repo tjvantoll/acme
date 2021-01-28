@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="cards">
+      <div>
         {people.map(person => (
           <div className="custom-tile">
             <h3>{person.name}</h3>
