@@ -52,30 +52,6 @@ export default function Support() {
     setProducts(getRandomProducts());
   }, []);
 
-  const CustomComboBox = (fieldRenderProps: any) => {
-    const { label, touched, validationMessage, ...others } = fieldRenderProps;
-    return (
-      <div>
-        <Label>
-          {label}
-          <MultiColumnComboBox
-            {...others}
-            data={products}
-            columns={[
-              { field: 'name', header: 'Name', width: '300px' },
-              { field: 'price', header: 'Price', width: '100px' },
-              { field: 'inStock', header: 'In Stock', width: '100px' }
-            ]}
-            textField={"name"} />
-          {
-            touched && validationMessage &&
-            <Error>{validationMessage}</Error>
-          }
-        </Label>
-      </div>
-    );
-  }
-
   const handleSubmit = (data: object) => {
     alert(JSON.stringify(data));
   }
@@ -96,7 +72,7 @@ export default function Support() {
             <Field
               label="Which product do you need help with?"
               name="product"
-              component={CustomComboBox}
+              component={CustomInput}
               validator={requiredValidator}
             />
 
