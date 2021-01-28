@@ -184,12 +184,6 @@ toolbar={() => {
 form={FormWithCustomEditor}
 ```
 
-``` tsx
-result[fields.end] = [
-  endValidator(formValueGetter(fields.end))
-].filter(Boolean).reduce((current, acc) => current || acc, '');
-```
-
 ## kr14
 
 ``` tsx
@@ -226,13 +220,9 @@ const FormWithCustomEditor = (props) => {
 ```
 
 ``` tsx
-const endValidator = React.useCallback(
-  (end) => {
-    return (end.getHours() > 17)
-      ? 'Let people leave before 5:00!'
-      : undefined
-  }, []
-);
+result[fields.end] = [
+  endValidator(formValueGetter(fields.end))
+].filter(Boolean).reduce((current, acc) => current || acc, '');
 ```
 
 ``` tsx
