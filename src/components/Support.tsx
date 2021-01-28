@@ -56,6 +56,32 @@ export default function Support() {
     alert(JSON.stringify(data));
   }
 
+  const CustomComboBox = (fieldRenderProps: any) => {
+    const { label, touched, validationMessage, ...others } = fieldRenderProps;
+    return (
+      <div>
+        <Label>
+          {label}
+          <div>
+            <MultiColumnComboBox
+              {...others}
+              data={products}
+              columns={[
+                { field: 'name', header: 'Name', width: '300px' },
+                { field: 'price', header: 'Price', width: '100px' },
+                { field: 'inStock', header: 'In Stock', width: '100px' }
+              ]}
+              textField={"name"} />
+            {
+              touched && validationMessage &&
+              <Error>{validationMessage}</Error>
+            }
+          </div>
+        </Label>
+      </div>
+    );
+  }
+
   return (
     <>
       <Form
