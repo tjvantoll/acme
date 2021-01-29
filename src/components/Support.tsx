@@ -45,7 +45,7 @@ const CustomTextArea = (fieldRenderProps: any) => {
   );
 };
 
-export default function SignUp() {
+export default function Support() {
   const [products, setProducts] = React.useState<Array<any>>([]);
 
   React.useEffect(() => {

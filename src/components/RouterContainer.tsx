@@ -15,8 +15,8 @@ const user = {
 };
 
 const items = [
-  { text: 'Home', icon: 'globe-outline', route: '/', children: null },
-  { text: 'Sign Up', icon: 'plus-outline', route: '/signup', children: null },
+  { text: 'Home', icon: 'globe', route: '/', children: null },
+  { text: 'Support', icon: 'question', route: '/support', children: null },
   { text: 'Calendar', icon: 'calendar', route: '/calendar', children: null },
   { text: 'Products', icon: 'cart', route: '/products', children: null },
   { text: 'Our Team', icon: 'user', route: '/team', children: null },

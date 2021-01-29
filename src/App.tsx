@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import RouterContainer from "./components/RouterContainer";
 import Calendar from "./components/Calendar";
-import SignUp from "./components/SignUp";
+import Support from "./components/Support";
 import Home from "./components/Home";
 import Planning from "./components/Planning";
 import Products from "./components/Products";
@@ -18,8 +18,8 @@ export default function App() {
             <Route path="/team">
               <Team />
             </Route>
-            <Route path="/signup">
-              <SignUp />
+            <Route path="/support">
+              <Support />
             </Route>
             <Route path="/products">
               <Products />
