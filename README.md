@@ -1,49 +1,50 @@
 # KendoReact ACME Sample
 
-- New component: TileLayout ✅
-  - https://www.telerik.com/kendo-react-ui/components/layout/tilelayout/
+- Hooks and TypeScript demos ❌
 
-- New component: MultiColumnComboBox ✅
-  - https://www.telerik.com/kendo-react-ui/components/dropdowns/multicolumncombobox/
+- New component: ExternalDropZone ❌
+  - https://www.telerik.com/kendo-react-ui/components/upload/external-drop-zone/
 
-- New component: DropDownTree ✅
-  - https://www.telerik.com/kendo-react-ui/components/dropdowns/dropdowntree/
+- New component: Skeleton ❌
+  - https://www.telerik.com/kendo-react-ui/components/indicators/skeleton/
 
-- New component: FloatingActionButton ✅
-  - https://www.telerik.com/kendo-react-ui/components/buttons/floatingactionbutton/
-
-- New component: BottomNavigation ✅
-  - https://www.telerik.com/kendo-react-ui/components/layout/bottomnavigation/
-
-- New component: ListBox ✅
-  - https://www.telerik.com/kendo-react-ui/components/listbox/
-
-- New component: Icon & SvgIcon ✅
-  - https://www.telerik.com/kendo-react-ui/components/utils/icon/
-  - https://www.telerik.com/kendo-react-ui/components/utils/svgicon/
+- New component: CircularGauge ❌
+  - https://www.telerik.com/kendo-react-ui/components/gauges/circulargauge/
 
 ---
 
-- React 17 support ✅
+- Grid
+  - Range selection ❌
+    - 
+  - Placeholders during virtualization ❌
+    -
+  - Expand and collapse all groups ❌
+    -
+  - Persist group state during paging ❌
+    -
 
-- Grid, TreeList, Editor, and Gantt ✅
-  - Built-in Keyboard Navigation
-    - https://www.telerik.com/kendo-react-ui/components/grid/keyboard-navigation/
-    - https://www.telerik.com/kendo-react-ui-develop/components/treelist/keyboard-navigation/
+- DatePicker & DateTimePicker
+  - Floating labels ❌
+    -
 
-- Grid 🐎
-  - Improved performance in state management for data cells.
+- PDF Generator
+  - Export any SVG ❌
+    -
 
-- Gantt ✅
-  - Built-in editing
-      - https://www.telerik.com/kendo-react-ui/components/gantt/editing/
+- Scheduler
+  - Multiple event selection ❌
+    -
 
-- Avatar ✅
-  - New options and updated design
-    - https://www.telerik.com/kendo-react-ui/components/layout/avatar/appearance/
+- ColorPicker
+  - Contrast color ❌
+    -
 
-- Scheduler ✅
-  - Custom form and form editor
-    - https://www.telerik.com/kendo-react-ui/components/scheduler/customization/form/overview/
-  - Current time marker
-    - https://www.telerik.com/kendo-react-ui/components/scheduler/views/day/#toc-current-time-marker
+- Input
+  - Character count ❌
+    -
+
+- Gantt
+  - Customizable column headers ❌
+    - https://www.telerik.com/kendo-react-ui/components/gantt/api/GanttHeaderCellProps/
+  - Year view ❌
+    - https://www.telerik.com/kendo-react-ui/components/gantt/

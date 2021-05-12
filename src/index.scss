@@ -1,10 +1,19 @@
 @import "~@progress/kendo-theme-default/dist/all.scss";
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 body {
   margin: 0;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.k-tilelayout {
+  user-select: none;
 }
 
 .k-drawer-content {
@@ -36,6 +45,14 @@ body {
     color: white;
     font-size: 30px;
   }
+  .k-i-menu {
+    font-size: 1.3rem;
+  }
+  .k-avatar {
+    height: 45px;
+    width: 45px;
+    flex-basis: 45px;
+  }
 }
 
 .k-drawer-item .k-item-text {
@@ -56,39 +73,61 @@ body {
 
 /* HOME */
 
-.k-tilelayout {
-  background-color: transparent;
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
 }
-
-.filter {
-  margin: 15px;
+.k-card {
+  min-width: 250px;
 }
-
-.custom-tile {
-  padding: 0 1em;
-  .k-icon {
-    padding-right: 6px;
-    margin-top: -2px;
+.k-card-header {
+  font-weight: bold;
+}
+.k-card-header span {
+  animation: fadeIn linear 1s;
+}
+.k-card-body {
+  display: flex;
+}
+.k-card-body > svg {
+  height: 100px;
+  width: 100px;
+  animation: fadeIn linear 1s;
+}
+.k-skeleton-circle {
+  height: 100px;
+  width: 100px;
+}
+.k-skeleton-rectangle {
+  height: 100px;
+  width: calc(100% - 100px);
+}
+.k-card ul {
+  animation: fadeIn linear 1s;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.k-card li {
+  padding: 0.5rem;
+}
+.k-icon {
+  padding-right: 0.5rem;
+}
+.k-card {
+  .k-i-user {
+    color: green;
+  }
+  .k-i-email {
+    color: red;
+  }
+  .k-i-globe {
+    color: blue;
   }
 }
 
-.share-popup {
-  font-size: 2rem !important;
-}
-
-.k-fab-item-text {
-  font-size: 30px;
-}
-.k-fab-item-icon {
-  font-size: 30px;
-}
-
-/* SIGN UP */
-
-.k-progressbar-horizontal {
-  width: 100%;
-  margin-bottom: 1rem;
-}
+/* Support */
 
 .k-form {
   width: 500px;
@@ -112,8 +151,14 @@ body {
   margin-top: 1rem;
 }
 
-.k-slider-track-wrap .k-label {
-  display: inherit;
+.k-upload {
+  border: none;
+}
+.k-upload .k-dropzone {
+  display: none;
+}
+.k-upload .k-upload-files {
+  border: none;
 }
 
 /* CALENDAR */

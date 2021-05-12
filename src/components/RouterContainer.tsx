@@ -5,7 +5,6 @@ import { useHistory } from 'react-router';
 import { Button } from '@progress/kendo-react-buttons';
 import { AppBar, AppBarSection, AppBarSpacer, Avatar, Drawer, DrawerContent } from '@progress/kendo-react-layout';
 import { DrawerSelectEvent } from '@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent';
-import { BottomNavigation } from '@progress/kendo-react-layout';
 
 const user = {
   initials: 'TV',
@@ -15,12 +14,12 @@ const user = {
 };
 
 const items = [
-  { text: 'Home', icon: 'globe', route: '/', children: null },
-  { text: 'Support', icon: 'question', route: '/support', children: null },
-  { text: 'Calendar', icon: 'calendar', route: '/calendar', children: null },
-  { text: 'Products', icon: 'cart', route: '/products', children: null },
-  { text: 'Our Team', icon: 'user', route: '/team', children: null },
-  { text: 'Planning', icon: 'folder', route: '/planning', children: null },
+  { text: 'Home', icon: 'k-i-globe', route: '/', children: null },
+  { text: 'Support', icon: 'k-i-question', route: '/support', children: null },
+  { text: 'Calendar', icon: 'k-i-calendar', route: '/calendar', children: null },
+  { text: 'Products', icon: 'k-i-cart', route: '/products', children: null },
+  { text: 'Our Team', icon: 'k-i-user', route: '/team', children: null },
+  { text: 'Planning', icon: 'k-i-folder', route: '/planning', children: null },
 ];
 
 const RouterContainer = (props: React.PropsWithChildren<any>) => {
@@ -39,10 +38,6 @@ const RouterContainer = (props: React.PropsWithChildren<any>) => {
     setSelectedId(e.itemIndex);
     setExpanded(false);
     history.push(e.itemTarget.props.route);
-  }
-  const onBottomNavSelect = (e: any) => {
-    setSelectedId(e.itemIndex);
-    history.push(e.itemTarget.route);
   }
   const closeDrawer = () => {
     setExpanded(false);
@@ -69,7 +64,6 @@ const RouterContainer = (props: React.PropsWithChildren<any>) => {
             <AppBarSection>
               <Button icon="menu" look="flat" onClick={toggleDrawer} />
             </AppBarSection>
-            <AppBarSpacer style={{ width: 4 }} />
 
             <AppBarSection>
               <h1>ACME Industries</h1>
@@ -85,14 +79,6 @@ const RouterContainer = (props: React.PropsWithChildren<any>) => {
           </AppBar>
 
           {props.children}
-
-          <BottomNavigation
-            items={items.map(item => ({
-              ...item,
-              selected: items[selectedId].text === item.text
-            }))}
-            onSelect={onBottomNavSelect}
-          />
         </DrawerContent>
       </Drawer>
     </div>

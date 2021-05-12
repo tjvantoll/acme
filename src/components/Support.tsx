@@ -4,6 +4,7 @@ import { MultiColumnComboBox } from '@progress/kendo-react-dropdowns';
 import { Field, Form, FormElement } from '@progress/kendo-react-form';
 import { Input, TextArea } from '@progress/kendo-react-inputs';
 import { Error, Label } from '@progress/kendo-react-labels';
+import { ExternalDropZone, Upload } from '@progress/kendo-react-upload';
 
 import { getRandomProducts } from '../data/products';
 
@@ -47,6 +48,7 @@ const CustomTextArea = (fieldRenderProps: any) => {
 
 export default function Support() {
   const [products, setProducts] = React.useState<Array<any>>([]);
+  const uploadRef = React.createRef<Upload>();
 
   React.useEffect(() => {
     setProducts(getRandomProducts());
@@ -107,6 +109,20 @@ export default function Support() {
               name="issue"
               component={CustomTextArea}
               validator={requiredValidator}
+            />
+
+            <ExternalDropZone
+              uploadRef={uploadRef}
+              customHint="Drag and drop an image of your issue here"
+            />
+            <Upload
+              ref={uploadRef}
+              batch={false}
+              multiple={true}
+              defaultFiles={[]}
+              withCredentials={false}
+              saveUrl={"https://demos.telerik.com/kendo-ui/service-v4/upload/save"}
+              removeUrl={"https://demos.telerik.com/kendo-ui/service-v4/upload/remove"}
             />
 
             <div className="k-form-buttons">

@@ -1,9 +1,11 @@
 import Chance from 'chance';
+import { generateRandomAvatar } from './avatar';
 
 const chance = new Chance();
 
 export type Person = {
   name: string;
+  avatar: Object;
   title: string;
   email: string;
   rating: number;
@@ -34,11 +36,28 @@ export const locationTree = [
 const locations = ['Boston', 'Detroit', 'New York',
   'London', 'Amsterdam', 'Sofia'];
 
+export function generateEmptyPeople(numberOfPeople: Number) {
+  const people: Array<Person> = [];
+  for (let i = 0; i < numberOfPeople; i++) {
+    people.push({
+      name: '',
+      avatar: {},
+      title: '',
+      email: '',
+      rating: 0,
+      selected: false,
+      location: ''
+    });
+  }
+  return people;
+}
+
 export function generateRandomPeople(numberOfPeople: Number) {
   const people: Array<Person> = [];
   for (let i = 0; i < numberOfPeople; i++) {
     people.push({
       name: chance.name(),
+      avatar: generateRandomAvatar(),
       title: chance.profession(),
       email: chance.email(),
       rating: Math.ceil(Math.random() * 5),

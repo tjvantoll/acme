@@ -47,7 +47,7 @@ export default function Team() {
             toolbar={() => {
               return (
                 <ListBoxToolbar
-                  tools={['transferTo', 'transferFrom', 'moveUp', 'moveDown']}
+                  tools={['moveUp', 'moveDown', 'transferTo', 'transferFrom', 'transferAllTo', 'transferAllFrom', 'remove']}
                   data={team1}
                   dataConnected={team2}
                   onToolClick={handleToolBarClick}
