@@ -73,13 +73,19 @@ body {
 
 /* HOME */
 
+.actions {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+.actions .k-button {
+  width: auto;
+  padding: 0.5rem 1rem;
+}
+
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 15px;
-}
-.k-card {
-  min-width: 250px;
 }
 .k-card-header {
   font-weight: bold;
@@ -126,6 +132,9 @@ body {
     color: blue;
   }
 }
+.k-gauge {
+  margin-left: auto;
+}
 
 /* Support */
 
@@ -139,16 +148,8 @@ body {
 .k-form .k-primary {
   margin-top: 1rem;
 }
-.k-form > div {
+.k-form > .k-textbox-container {
   margin-bottom: 1rem;
-}
-
-.k-textarea > .k-input {
-  width: 100%;
-}
-
-.k-radio-list {
-  margin-top: 1rem;
 }
 
 .k-upload {

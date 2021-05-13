@@ -15,6 +15,7 @@
     "@progress/kendo-react-editor": "^4.6.0",
     "@progress/kendo-react-form": "^4.6.0",
     "@progress/kendo-react-gantt": "^4.6.0",
+    "@progress/kendo-react-gauges": "^4.6.0",
     "@progress/kendo-react-grid": "^4.6.0",
     "@progress/kendo-react-indicators": "^4.6.0",
     "@progress/kendo-react-inputs": "^4.6.0",

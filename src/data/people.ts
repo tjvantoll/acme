@@ -60,11 +60,13 @@ export function generateRandomPeople(numberOfPeople: Number) {
       avatar: generateRandomAvatar(),
       title: chance.profession(),
       email: chance.email(),
-      rating: Math.ceil(Math.random() * 5),
+      rating: chance.integer({ min: 1, max: 100 }),
       selected: false,
       location: locations[Math.floor(Math.random() * locations.length)],
     });
   }
-  return people;
+  return people.sort((a, b) => {
+    return a.rating > b.rating ? -1 : 1;
+  });
 }
 

@@ -15,21 +15,21 @@
 
 - Grid
   - Range selection ❌
-    - 
+    - https://www.telerik.com/kendo-react-ui/components/grid/selection/
   - Placeholders during virtualization ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/grid/scroll-modes/virtual/#toc-debouncing-pagechange-events
   - Expand and collapse all groups ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/grid/grouping/#toc-expand-and-collapse-all-groups
   - Persist group state during paging ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/grid/grouping/#toc-persist-groups-collapsed-state
 
 - DatePicker & DateTimePicker
   - Floating labels ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/dateinputs/datepicker/placeholders/#toc-floating-labels
 
 - PDF Generator
   - Export any SVG ❌
-    -
+    - https://www.telerik.com/blogs/whats-new-kendoreact-r2-2021
 
 - Scheduler
   - Multiple event selection ❌

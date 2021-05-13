@@ -11,13 +11,16 @@
 
 import React from 'react';
 
-const Render = (props: any) => {
-  let ui;
+const Render = ({
+  children = null,
+  if: isTruthy = false,
+}) => {
+  let ui = null;
 
-  if (props.if) {
+  if (isTruthy) {
     ui = (
       <>
-        {props.children}
+        {children}
       </>
     );
   }

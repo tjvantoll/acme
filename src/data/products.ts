@@ -12,10 +12,12 @@ export function getRandomProducts() {
     var price = chance.integer({ min: 10, max: 10000 });
 
     products.push({
+      id: i,
       name: chance.capitalize(`${chance.first()} ${chance.animal()}`),
       price: formatter.format(price),
       lastOrder: chance.date({ year: 2019 }),
-      inStock: chance.bool() ? "Yes" : "No"
+      inStock: chance.bool() ? "Yes" : "No",
+      selected: false
     });
   }
 
