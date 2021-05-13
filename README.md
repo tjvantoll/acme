@@ -33,15 +33,15 @@
 
 - Scheduler
   - Multiple event selection ❌
-    -
+    -https://www.telerik.com/kendo-react-ui/components/scheduler/customization/items/multiple-selection/
 
 - ColorPicker
   - Contrast color ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/inputs/colorgradient/color-contrast/
 
 - Input
   - Character count ❌
-    -
+    - https://www.telerik.com/kendo-react-ui/components/inputs/input/counter/
 
 - Gantt
   - Customizable column headers ❌

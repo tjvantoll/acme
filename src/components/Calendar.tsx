@@ -7,6 +7,7 @@ import {
   SchedulerDataChangeEvent,
   SchedulerForm,
   useSchedulerFieldsContext,
+  WorkWeekView,
 } from '@progress/kendo-react-scheduler';
 
 import { getRandomEvents } from '../data/events';
@@ -76,6 +77,7 @@ export default function Calendar() {
     >
       <DayView />
       <MonthView />
+      <WorkWeekView />
     </Scheduler>
   );
 };

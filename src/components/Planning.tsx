@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Gantt } from '@progress/kendo-react-gantt';
+import { Gantt, GanttMonthView, GanttWeekView, GanttYearView } from '@progress/kendo-react-gantt';
 
 const columns = [
   { field: 'id', title: 'ID', width: 70, expandable: true },
@@ -53,7 +53,11 @@ export default function Planning() {
         taskData={taskData}
         dependencyData={dependencyData}
         navigatable={true}
-      />
+      >
+        <GanttWeekView />
+        <GanttMonthView />
+        <GanttYearView />
+      </Gantt>
     </>
   );
 };
