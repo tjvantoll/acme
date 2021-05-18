@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@progress/kendo-react-buttons';
-import { DateInput, DatePicker } from '@progress/kendo-react-dateinputs';
+import { DatePicker } from '@progress/kendo-react-dateinputs';
 import { Field, Form, FormElement } from '@progress/kendo-react-form';
-import { Input, TextArea } from '@progress/kendo-react-inputs';
+import { Input } from '@progress/kendo-react-inputs';
 import { ExternalDropZone, Upload } from '@progress/kendo-react-upload';
 
 export default function Support() {
