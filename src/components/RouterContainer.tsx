@@ -21,6 +21,7 @@ const items = [
   { text: 'Products', icon: 'k-i-cart', route: '/products', children: null },
   { text: 'Our Team', icon: 'k-i-user', route: '/team', children: null },
   { text: 'Planning', icon: 'k-i-folder', route: '/planning', children: null },
+  // { text: 'Play', icon: 'k-i-play', route: '/play', children: null },
 ];
 
 const RouterContainer = (props: React.PropsWithChildren<any>) => {

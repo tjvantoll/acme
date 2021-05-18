@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Planning from "./components/Planning";
 import Products from "./components/Products";
 import Team from "./components/Team";
+import Play from "./components/Play";
 
 export default function App() {
   return (
@@ -33,6 +34,9 @@ export default function App() {
             </Route>
             <Route path="/planning">
               <Planning />
+            </Route>
+            <Route path="/play">
+              <Play />
             </Route>
             <Route exact path="/">
               <Home />

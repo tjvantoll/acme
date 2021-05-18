@@ -35,7 +35,7 @@ export default function Home() {
             </Render>
             <Render if={person.name !== ""}>
               <CardHeader>
-                <span>{person.name}</span> :
+                <span>{person.name}</span>
                 </CardHeader>
               <CardBody>
                 <Avatar

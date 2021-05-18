@@ -34,9 +34,9 @@ export default function Products() {
         }))}
         selectable={{
           enabled: true,
-          drag: true,
-          cell: true,
-          mode: 'multiple'
+          drag: false,
+          cell: false,
+          mode: 'single'
         }}
         selectedField="selected"
         dataItemKey="id"

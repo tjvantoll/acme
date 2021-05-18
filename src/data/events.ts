@@ -8,7 +8,7 @@ export function getRandomEvents() {
   const day = ("0" + today.getDate()).slice(-2);
   const data: Array<any> = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     const startHourInt = chance.integer({ min: 8, max: 16 });
     const endHourInt = startHourInt + 1;
     const startHour = ("0" + startHourInt).slice(-2);
