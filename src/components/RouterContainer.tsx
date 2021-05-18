@@ -15,6 +15,7 @@ const user = {
 
 const items = [
   { text: 'Home', icon: 'k-i-globe', route: '/', children: null },
+  { text: 'Dashboard', icon: 'k-i-layout-2-by-2', route: '/dashboard', children: null },
   { text: 'Support', icon: 'k-i-question', route: '/support', children: null },
   { text: 'Calendar', icon: 'k-i-calendar', route: '/calendar', children: null },
   { text: 'Products', icon: 'k-i-cart', route: '/products', children: null },

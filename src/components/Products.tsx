@@ -34,8 +34,8 @@ export default function Products() {
         }))}
         selectable={{
           enabled: true,
-          drag: false,
-          cell: false,
+          drag: true,
+          cell: true,
           mode: 'multiple'
         }}
         selectedField="selected"

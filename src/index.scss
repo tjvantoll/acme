@@ -162,6 +162,15 @@ body {
   border: none;
 }
 
+/* DASHBOARD */
+
+.chart-container {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
 /* CALENDAR */
 
 .k-scheduler-footer .k-dropdown {

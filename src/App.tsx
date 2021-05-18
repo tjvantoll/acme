@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import RouterContainer from "./components/RouterContainer";
+import Dashboard from "./components/Dashboard";
 import Calendar from "./components/Calendar";
 import Support from "./components/Support";
 import Home from "./components/Home";
@@ -17,6 +18,9 @@ export default function App() {
           <Switch>
             <Route path="/team">
               <Team />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/support">
               <Support />
