@@ -10,7 +10,6 @@ import Render from './Render';
 
 export default function Home() {
   const [allPeople, setAllPeople] = React.useState<Person[]>(generateEmptyPeople(20));
-  // const [allPeople, setAllPeople] = React.useState<Person[]>(generateRandomPeople(20));
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -23,7 +22,7 @@ export default function Home() {
       <div className="card-container">
         {allPeople.map((person, index) => (
           <Card key={index}>
-            <Render if={person.name === ""}>
+            <Render if={person.name === ''}>
               <CardHeader>
                 <Skeleton shape="text" />
               </CardHeader>
@@ -33,7 +32,7 @@ export default function Home() {
                 <Skeleton shape="circle" />
               </CardBody>
             </Render>
-            <Render if={person.name !== ""}>
+            <Render if={person.name !== ''}>
               <CardHeader>
                 <span>{person.name}</span>
                 </CardHeader>

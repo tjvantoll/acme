@@ -9,7 +9,7 @@ import {
   ChartTitle,
   ChartLegend,
 } from "@progress/kendo-react-charts";
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
+import { savePDF } from '@progress/kendo-react-pdf';
 import 'hammerjs';
 
 import { getAreaData, getDataYears, getPieData, getSeries } from '../data/metrics';

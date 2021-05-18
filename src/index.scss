@@ -97,21 +97,18 @@ body {
   display: flex;
   gap: 5px;
 }
-.k-card-body > svg {
+.k-card-body > svg, .k-skeleton-circle {
   height: 100px;
   width: 100px;
-  animation: fadeIn linear 1s;
 }
-.k-skeleton-circle {
-  height: 100px;
-  width: 100px;
+.k-card-body > * {
+  animation: fadeIn linear 1s;
 }
 .k-skeleton-rectangle {
   height: 100px;
-  width: calc(100% - 100px);
+  width: calc(100% - 200px);
 }
 .k-card ul {
-  animation: fadeIn linear 1s;
   list-style-type: none;
   margin: 0;
   padding: 0;
