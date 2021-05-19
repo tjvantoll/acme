@@ -19,9 +19,7 @@ export default function Dashboard() {
 
   const exportPDF = () => {
     let element = chartContainer.current || document.body;
-    savePDF(element, {
-
-    })
+    savePDF(element);
   }
 
   return (
