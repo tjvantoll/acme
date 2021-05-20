@@ -1,14 +1,17 @@
 import React from 'react';
+import { Button } from '@progress/kendo-react-buttons';
 import { Icon } from '@progress/kendo-react-common';
 import { CircularGauge } from '@progress/kendo-react-gauges';
 import { Skeleton } from '@progress/kendo-react-indicators';
 import { Card, CardHeader, CardBody } from '@progress/kendo-react-layout';
+import { savePDF } from "@progress/kendo-react-pdf";
 import Avatar from 'avataaars';
 
 import { generateEmptyPeople, generateRandomPeople, Person } from '../data/people';
 import Render from './Render';
 
 export default function Home() {
+  const cardContainer = React.useRef<HTMLDivElement>(null);
   const [allPeople, setAllPeople] = React.useState<Person[]>(generateEmptyPeople(20));
 
   React.useEffect(() => {
@@ -17,9 +20,21 @@ export default function Home() {
     }, 2000);
   }, []);
 
+
+  const exportPDF = () => {
+    let element = cardContainer.current || document.body;
+    savePDF(element, {
+      imageResolution: 200
+    })
+  }
+
   return (
     <>
-      <div className="card-container">
+      <div className="actions">
+        <Button icon="file-pdf" onClick={exportPDF} primary={true}>Export as PDF</Button>
+      </div>
+
+      <div className="card-container" ref={cardContainer}>
         {allPeople.map((person, index) => (
           <Card key={index}>
             <Render if={person.name === ''}>
